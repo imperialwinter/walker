@@ -1,0 +1,136 @@
+#define TAK
+
+#include "general/standard_commands.h"
+
+piece  main, lbwing, lbflare, rbwing, rbflare, ltwing, ltflare, rtwing, rtflare, firept, lben, lten, rben, rten;
+
+static-var  gun_1, bMoving;
+
+#define SMOKEPIECE1 main
+#define SMOKEPIECE2 main
+#define SMOKEPIECE3 main
+#define SMOKEPIECE4 main
+#include "general/smokeunit_sws.h"
+
+#define MED_MUZZLE_FLASH_FX_RED 1024+1
+#define exhaustfx 1024+2
+
+Exhaust() {
+	while(1) {
+		if(bMoving) {
+			emit-sfx exhaustfx from lben;
+			emit-sfx exhaustfx from lten;
+			emit-sfx exhaustfx from rben;
+			emit-sfx exhaustfx from rten;
+		}		
+		sleep 20;
+	}
+}
+
+StartMoving() {
+	bMoving=1;
+}
+	
+StopMoving() {
+	bMoving=0;
+}
+
+Create() {
+	turn lben to x-axis <180> now;
+ 	turn lten to x-axis <180> now;
+ 	turn rben to x-axis <180> now;
+ 	turn rten to x-axis <180> now;
+	gun_1 = 0;
+	start-script Exhaust();
+	start-script SmokeUnit_SWS();
+}
+
+RestoreWings() {
+	sleep 15000;
+	turn lbwing to z-axis <0> speed <50>;
+	turn rbwing to z-axis <0> speed <50>;
+	turn ltwing to z-axis <0> speed <50>;
+	turn rtwing to z-axis <0> speed <50>;
+}
+
+AimWeapon1(heading, pitch) {
+	signal SIG_AIM1;
+	set-signal-mask SIG_AIM1;
+	turn ltwing to z-axis <-18> speed <50>;
+	turn rtwing to z-axis <18> speed <50>;
+	turn lbwing to z-axis <18> speed <50>;
+	turn rbwing to z-axis <-18> speed <50>;
+	wait-for-turn ltwing around z-axis;
+	start-script RestoreWings();
+	return 1;
+}
+
+QueryWeapon1(piecenum) {
+	if(gun_1 == 0) {
+		piecenum = ltflare;
+	}
+	if(gun_1 == 1) {
+		piecenum = rbflare;
+	}
+	if(gun_1 == 2) {
+		piecenum = lbflare;
+	}
+	if(gun_1 == 3) {
+		piecenum = rtflare;
+	}
+}
+
+Shot1(seriouslywhatthehellisthisvar) {
+	++gun_1;
+	if(gun_1 > 3) {
+		gun_1 = 0;
+	}
+	if(gun_1 == 0) {
+		emit-sfx MED_MUZZLE_FLASH_FX_RED from ltflare;
+		emit-sfx MED_MUZZLE_FLASH_FX_RED from rbflare;
+	}
+	if(gun_1 == 2) {
+		emit-sfx MED_MUZZLE_FLASH_FX_RED from lbflare;
+		emit-sfx MED_MUZZLE_FLASH_FX_RED from rtflare;
+	}
+}
+
+FireWeapon1() {
+	return 0;
+}
+
+QueryWeapon2(piecenum) {
+	piecenum = firept;
+}
+
+FireWeapon2() {
+	return 0;
+}
+
+Killed(severity, corpsetype) {
+	if(severity <= 25)
+	{
+		corpsetype = 1;
+		explode main type BITMAPONLY | BITMAP;
+		return 0;
+	}
+	if(severity <= 50) {
+		corpsetype = 2;
+		explode main type BITMAPONLY | BITMAP;
+		explode rtwing type BITMAPONLY | BITMAP;
+		explode lbwing type BITMAPONLY | BITMAP;
+		return 0;
+	}
+	if(severity <= 99) {
+		corpsetype = 3;
+		explode ltwing type FALL | SMOKE | BITMAP;
+		explode rtwing type FALL | SMOKE | BITMAP;
+		return 0;
+	}
+	corpsetype = 3;
+	explode main type BITMAPONLY | BITMAP;
+	explode ltwing type FALL | SMOKE | BITMAP;
+	explode rtwing type FALL | SMOKE | BITMAP;
+	explode lbwing type FALL | SMOKE | BITMAP;
+	explode rbwing type FALL | SMOKE | BITMAP;
+}

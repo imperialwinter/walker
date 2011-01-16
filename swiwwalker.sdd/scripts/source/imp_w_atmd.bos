@@ -1,0 +1,116 @@
+#define TAK
+
+#include "general/standard_commands.h"
+
+piece  base,
+		leg1, ankle1, toe11, toe12, toe13,
+		leg2, ankle2, toe21, toe22, toe23,
+		leg3, ankle3, toe31, toe32, toe33,
+		leg4, ankle4, toe41, toe42, toe43,
+		cfront, cright, cleft, cback, dbase, dcenter, dtop, ffront, fleft, fback, fright, shield;
+
+#define SMOKEPIECE1 base
+#define SMOKEPIECE2 base
+#define SMOKEPIECE3 base
+#define SMOKEPIECE4 base
+#include "general/smokeunit_sws.h"
+
+static-var  bMoving, unfolded;
+
+#define SIG_MOVE			2
+#define SIG_AIM				4
+
+#include "ataawalk.h"
+
+Create() {
+	set ACTIVATION to 0;
+	bMoving = FALSE;
+	unfolded = FALSE;
+	start-script SmokeUnit_SWS();
+	while(get BUILD_PERCENT_LEFT) {
+		sleep 500;
+	}
+	set ARMORED to 1;
+}
+
+RestoreAfterDelay() {
+	if(!get ACTIVATION) {
+		move dtop to y-axis [0] speed [25];
+		wait-for-turn dtop around y-axis;
+		turn ffront to x-axis <0> speed <50>;
+		turn fleft to z-axis <0> speed <50>;
+		turn fback to x-axis <0> speed <50>;
+		turn fright to z-axis <0> speed <50>;
+		wait-for-turn ffront around x-axis;
+		move ffront to y-axis [0] speed [25];
+		move fleft to y-axis [0] speed [25];
+		move fright to y-axis [0] speed [25];
+		move fback to y-axis [0] speed [25];
+		move dcenter to y-axis [0] speed [25];
+		wait-for-move ffront along y-axis;
+		move cfront to z-axis [0] speed [25];
+		move cback to z-axis [0] speed [25];
+		move cright to y-axis [0] speed [25];
+		move cleft to y-axis [0] speed [25];
+		move dbase to y-axis [0] speed [25];
+		wait-for-move dbase along y-axis;
+		turn cright to z-axis <0> speed <50>;
+		turn cleft to z-axis <0> speed <50>;
+		wait-for-move cleft along z-axis;
+		unfolded = FALSE;
+		set ARMORED to 1;
+	}
+}
+
+Unfold() {
+	turn cright to z-axis <90> speed <50>;
+	turn cleft to z-axis <-90> speed <50>;
+	wait-for-turn cleft around z-axis;
+	move cfront to z-axis [5] speed [25];
+	move cback to z-axis [-5] speed [25];
+	move cright to y-axis [-13] speed [25];
+	move cleft to y-axis [-13] speed [25];
+	move dbase to y-axis [13] speed [25];
+	wait-for-move dbase along y-axis;
+	turn ffront to x-axis <-50> speed <50>;
+	turn fleft to z-axis <50> speed <50>;
+	turn fback to x-axis <50> speed <50>;
+	turn fright to z-axis <-50> speed <50>;
+	move ffront to y-axis [13] speed [25];
+	move fleft to y-axis [13] speed [25];
+	move fright to y-axis [13] speed [25];
+	move fback to y-axis [13] speed [25];
+	wait-for-turn ffront around x-axis;
+	move dcenter to y-axis [7] speed [25];
+	wait-for-move ffront along y-axis;
+	move dtop to y-axis [20.5] speed [10];
+	wait-for-move dtop along y-axis;
+	unfolded = TRUE;
+	set ARMORED to 0;
+}
+
+AimWeapon1(heading, pitch) {
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	if(!unfolded and get ACTIVATION) {
+		call-script Unfold();
+	}
+	if(unfolded and get ACTIVATION) {
+		return 1;
+	}
+	start-script RestoreAfterDelay();
+}
+
+AimFromWeapon1(piecenum) {
+	piecenum = dcenter;
+}
+
+FireWeapon1() {
+}
+
+QueryWeapon1(piecenum) {
+	piecenum=shield;
+}
+
+Killed(severity, corpsetype) {
+}

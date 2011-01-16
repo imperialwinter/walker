@@ -1,0 +1,53 @@
+[imp_a_gunboat]
+{
+	name=Gunboat Rocket;
+	model=weapons/w_conc_sml.s3o;
+	rendertype=1;
+	tolerance=3000;
+	explosiongenerator=custom:ROCKET_ARTY_EXPLOSION_FX;
+	explosionspeed=65536;
+
+	lineofsight=1;
+	selfprop=1;
+	firestarter=70;
+
+	range=620;
+	reloadtime=6;
+	startvelocity=350;
+	weaponacceleration=120;
+	weaponvelocity=540;
+	areaofeffect=96;
+	edgeeffectiveness=0.5;
+	weapontimer=5;
+	smoketrail=1;
+
+	soundstart=ROCKLIT1;
+	soundstartvolume=10;
+	soundhit=XPLOMED1;
+	soundhitvolume=10;
+
+	avoidfriendly=0;
+	collidefriendly=0;
+	avoidfeature=0;
+	noselfdamage=1;
+
+	collisionsize=8;
+	impulsefactor=0;
+	impulseboost=0;
+	cratermult=0;
+	craterboost=0;
+
+	texture1=MegaFlare_NoAlpha;
+	texture2=smoketrail;
+
+	[damage]
+	{
+		default=100;
+		no_armor=200;
+		light_armor=200;
+		medium_armor=200;
+		heavy_armor=200;
+		ion_damage=200;
+		flag=0.000001;
+	}
+}

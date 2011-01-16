@@ -1,0 +1,123 @@
+#define TAK
+
+#include "general/standard_commands.h"
+
+piece  base, rwing, lwing, mflare, lflare, rflare, e1, e2;
+
+static-var  gun_1, bMoving;
+
+#define SMOKEPIECE1 base
+#define SMOKEPIECE2 base
+#define SMOKEPIECE3 base
+#define SMOKEPIECE4 base
+#include "general/smokeunit_sws.h"
+
+#define MED_MUZZLE_FLASH_FX_RED 1024+1
+#define exhaustfx 1024+2
+
+Exhaust() {
+	while(1) {
+		if(bMoving) {
+			emit-sfx exhaustfx from e1;
+			emit-sfx exhaustfx from e2;
+		}		
+		sleep 20;
+	}
+}
+
+Create() {
+	gun_1 = 0;
+	bMoving = 0;
+	start-script Exhaust();
+	start-script SmokeUnit_SWS();
+}
+
+QueryWeapon1(piecenum) {
+	if(gun_1 == 0) {
+		piecenum = lflare;
+	}
+	if(gun_1 == 1) {
+		piecenum = mflare;
+	}
+	if(gun_1 == 2) 	{
+		piecenum = rflare;
+	}
+}
+
+AimWeapon1(heading, pitch) {
+	signal SIG_AIM1;
+	set-signal-mask SIG_AIM1;
+	turn lflare to y-axis heading now;
+	turn rflare to y-axis heading now;
+	turn mflare to y-axis heading now;
+	turn lflare to x-axis pitch now;
+	turn rflare to x-axis pitch now;
+	turn mflare to x-axis pitch now;
+	return 1;
+}
+
+FireWeapon1() {
+	if(gun_1 == 0) {
+		emit-sfx MED_MUZZLE_FLASH_FX_RED from lflare;
+		sleep 150;
+	}
+	if(gun_1 == 1) {
+		emit-sfx MED_MUZZLE_FLASH_FX_RED from mflare;
+		sleep 150;
+	}
+	if(gun_1 == 2) {
+		emit-sfx MED_MUZZLE_FLASH_FX_RED from rflare;
+		sleep 150;
+	}
+	++gun_1;
+	if(gun_1 > 2) {
+		gun_1 = 0;
+	}
+}
+
+AimWeapon2(heading, pitch) {
+	return 1;
+}
+
+FireWeapon2() {
+}
+
+QueryWeapon2(piecenum) {
+	piecenum = base;
+}
+
+StartMoving() {
+	bMoving = 1;
+}
+
+StopMoving() {
+	bMoving = 0;
+}
+
+Killed(severity, corpsetype) {
+	if(severity <= 25) {
+		corpsetype = 1;
+		explode base type BITMAPONLY | BITMAP;
+		explode rwing type BITMAPONLY | BITMAP;
+		explode lwing type BITMAPONLY | BITMAP;
+		return 0;
+	}
+	if(severity <= 50) {
+		corpsetype = 2;
+		explode base type BITMAPONLY | BITMAP;
+		explode rwing type BITMAPONLY | BITMAP;
+		explode lwing type BITMAPONLY | BITMAP;
+		return 0;
+	}
+	if(severity <= 99) {
+		corpsetype = 3;
+		explode base type BITMAPONLY | BITMAP;
+		explode rwing type FALL | SMOKE | BITMAP;
+		explode lwing type FALL | SMOKE | BITMAP;
+		return 0;
+	}
+	corpsetype = 3;
+	explode base type BITMAPONLY | BITMAP;
+	explode rwing type FALL | SMOKE | BITMAP;
+	explode lwing type FALL | SMOKE | BITMAP;
+}

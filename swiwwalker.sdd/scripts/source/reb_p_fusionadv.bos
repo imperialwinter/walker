@@ -1,0 +1,52 @@
+#define TAK
+
+#include "general/standard_commands.h"
+
+piece  root, base, scaffolds, dustrot, dust1, dust2;
+
+#define SMOKEPIECE1 base
+#define SMOKEPIECE2 base
+#define SMOKEPIECE3 base
+#define SMOKEPIECE4 base
+#include "general/smokeunit_sws.h"
+
+#define SCAFFOLD_PIECE scaffolds
+#define SCAFFOLD_BELOW_GROUND_DIST [-150]
+#define BUILDING_ROOT base
+#define BUILDING_BELOW_GROUND_DIST [-80]
+#define BUILDING_RISE_SPEED [5.75]
+#define DUSTFX 1024+1
+#define DUST_ROOT dustrot
+#define DUSTFXPT1 dust1
+#define DUSTFXPT2 dust2
+
+#include "general/scaffolds.h"
+
+Create() {
+	start-script SmokeUnit_SWS();
+	call-script ConstructionAnim();
+	move BUILDING_ROOT to y-axis [0] now;
+}
+
+Killed(severity, corpsetype) {
+	var corpse;
+	corpse = rand(185,186);
+	if(severity <= 25) {
+		corpsetype = 1;
+		explode base type SMOKE | FIRE | BITMAP;
+		return 0;
+	}
+	if(severity <= 50) {
+		corpsetype = 2;
+		explode base type SMOKE | FIRE | BITMAP;
+		return 0;
+	}
+	if(severity <= 99) {
+		corpsetype = 3;
+		explode base type SMOKE | FIRE | BITMAP;
+		return 0;
+	}
+	corpsetype = 3;
+	explode base type SMOKE | FIRE | BITMAP;
+	return 0;
+}

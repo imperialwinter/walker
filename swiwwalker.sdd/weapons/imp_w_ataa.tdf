@@ -1,0 +1,42 @@
+[imp_w_ataa]
+{
+	name=Burst Concussion Missile;
+	model=weapons/w_conc.s3o;
+	rendertype=1;
+	turret=1;
+	tolerance=4000;
+
+	lineofsight=1;
+	selfprop=1;
+	firestarter=70;
+	toairweapon=1;
+
+	range=570;
+	reloadtime=.65;
+	startvelocity=590;
+	weaponacceleration=101;
+	weaponvelocity=920;
+	guidance=1;
+	tracks=1;
+	areaofeffect=120;
+	edgeeffectiveness=0.9;
+	burnblow=1;
+	weapontimer=6;
+	flighttime=6;
+	smoketrail=1;
+	turnrate=45000;
+
+	soundstart=imp_v_ATAA_fire;
+	soundhit=XPLOSML2;
+
+	[damage]
+	{
+		default=175;
+		no_armor=175;
+		light_armor=175;
+		medium_armor=175;
+		heavy_armor=175;
+		ion_damage=175;
+		flag=0.000001;
+	}
+}

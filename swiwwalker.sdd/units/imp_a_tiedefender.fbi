@@ -1,0 +1,50 @@
+[unitinfo]
+{
+	unitname=imp_a_tiedefender;
+	objectname=empire/a-tiedefender.s3o;
+	buildpic=imp_a_tiedefender.png;
+	icontype=aircraft_aa;
+	soundcategory=imp-a-tiedefender;
+	category=VTOL;
+
+	name=TIE Defender;
+	description=Advanced Fighter;
+	maxdamage=500;
+	autoheal=10;
+	buildcostmetal=650;
+	buildcostenergy=18000;
+	buildtime=90;
+	footprintx=2;
+	footprintz=2;
+	mass=100;
+
+	shownanoframe=0;
+	collisionspherescale=1.0;
+
+	sightdistance=400;
+
+	canmove=1;
+	maxvelocity=13;
+	acceleration=2;
+	brakerate=0.6;
+	turnrate=350;
+
+	canfly=1;
+	cruisealt=250;
+
+	selfdestructcountdown=1;
+	explodeas=TIE_BLAST;
+	selfdestructas=TIE_BLAST;
+
+	weapon1=imp_a_tieinterceptor;
+	onlytargetcategory1=GROUND VTOL;
+	weaponmaindir1=0 0 1;
+	maxangledif1=60;
+	weapon2=imp_a_tiedefendermissile;
+	onlytargetcategory2=GROUND VTOL;
+	[sfxtypes]
+	{
+		explosiongenerator0=custom:SMOKEPUFF_SWS_FX;
+		explosiongenerator1=custom:MED_MUZZLE_FLASH_FX_GREEN;
+	}
+}

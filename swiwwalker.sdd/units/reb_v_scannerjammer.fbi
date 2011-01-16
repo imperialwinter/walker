@@ -1,0 +1,61 @@
+[unitinfo]
+{
+	unitname=reb_v_scannerjammer;
+	objectname=rebel/v-scannerjammer.s3o;
+	buildpic=reb_v_scannerjammer.png;
+	corpse=reb_v_scannerjammer_dead;
+	icontype=vehicle_lt;
+	soundcategory=reb-v-scannerjammer;
+	category=IONTARGETABLE GROUND TANK;
+
+	name=Scanner Jammer;
+	description=Mobile Sensor Jammer;
+	maxdamage=460;
+	damagemodifier=0.75;
+	idleautoheal=0;
+	buildcostmetal=373;
+	buildcostenergy=5667;
+	buildtime=4248;
+	footprintx=4;
+	footprintz=4;
+	mass=500;
+
+	shownanoframe=0;
+	levelground=0;
+
+	energymake=8;
+	energyuse=20;
+
+	sightdistance=400;
+	radardistance=700;
+	radardistancejam=700;
+	sonardistance=700;
+	sonardistancejam=700;
+
+	onoffable=1;
+	activatewhenbuilt=1;
+
+	canmove=1;
+	movementclass=Tank2x2;
+	maxvelocity=1.2;
+	acceleration=0.2;
+	brakerate=0.02;
+	turnrate=295;
+	maxslope=16;
+
+	leavetracks=1;
+	trackwidth=32;
+	trackoffset=3.5;
+	trackstrength=8;
+	trackstretch=1;
+	tracktype=stdtank;
+
+	selfdestructcountdown=1;
+	explodeas=MEDIUM_BUILDING;
+	selfdestructas=MEDIUM_BUILDING;
+
+	[sfxtypes]
+	{
+		explosiongenerator0=custom:SMOKEPUFF_SWS_FX;
+	}
+}

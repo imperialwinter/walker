@@ -1,0 +1,56 @@
+[unitinfo]
+{
+	unitname=imp_a_tiephantom;
+	objectname=empire/a-tiephantom.s3o;
+	buildpic=imp_a_tiephantom.png;
+	icontype=aircraft_aa;
+	soundcategory=imp-a-tie;
+	category=VTOL;
+
+	name=TIE Phantom;
+	description=Experimental Cloaking Fighter;
+	maxdamage=190;
+	idleautoheal=0;
+	buildcostmetal=142;
+	buildcostenergy=2310;
+	buildtime=30;
+	footprintx=2;
+	footprintz=2;
+	mass=100;
+
+	shownanoframe=0;
+	collisionspherescale=1.0;
+
+	energymake=10;
+	energyuse=10;
+
+	sightdistance=400;
+	stealth=1;
+
+	cloakcost=3;
+	cloakcostmoving=10;
+
+	canmove=1;
+	maxvelocity=12;
+	acceleration=2;
+	brakerate=0.6;
+	turnrate=400;
+
+	canfly=1;
+	cruisealt=250;
+
+	selfdestructcountdown=1;
+	explodeas=TIE_BLAST;
+	selfdestructas=TIE_BLAST;
+
+	weapon1=imp_a_tiefighter;
+	badtargetcategory1=GROUND;
+	onlytargetcategory1=GROUND VTOL;
+	weaponmaindir1=0 0 1;
+	maxangledif1=90;
+	[sfxtypes]
+	{
+		explosiongenerator0=custom:SMOKEPUFF_SWS_FX;
+		explosiongenerator1=custom:MED_MUZZLE_FLASH_FX_GREEN;
+	}
+}

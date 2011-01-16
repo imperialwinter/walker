@@ -1,0 +1,61 @@
+[unitinfo]
+{
+	unitname=imp_i_darktrooper;
+	objectname=empire/i-darktrooper.s3o;
+	buildpic=imp_i_darktrooper.png;
+	icontype=inf_special;
+	soundcategory=imp-i-reptrooper;
+	category=GROUND INFANTRY;
+
+	name=Darktrooper;
+	description=Experimental Soldier;
+	side=Empire;
+	maxdamage=1000;
+	buildcostmetal=50;
+	buildcostenergy=300;
+	buildtime=9;
+	footprintx=1;
+	footprintz=1;
+	mass=100;
+	cobid=31;
+
+	upright=1;
+	reclaimable=0;
+	shownanoframe=0;
+	smoothanim=0;
+
+	sightdistance=500;
+	stealth=1;
+	seismicdistance=1000;
+	seismicsignature=1;
+
+	canmove=1;
+	movementclass=Infantry1x1;
+	maxvelocity=1;
+	acceleration=0.5;
+	brakerate=0.5;
+	turnrate=1300;
+	maxslope=20;
+	maxwaterdepth=12;
+	transportbyenemy=0;
+
+	selfdestructcountdown=1;
+	explodeas=IMP_HUMAN_BLAST;
+	selfdestructas=IMP_HUMAN_BLAST;
+
+	nochasecategory=VTOL;
+
+	weapon1=imp_i_darktrooper;
+	badtargetcategory1=VTOL;
+	onlytargetcategory1=GROUND VTOL;
+	weaponmaindir1=0 0 1;
+	maxangledif1=190;
+	weapon2=imp_i_darktrooper;
+	badtargetcategory2=VTOL;
+	onlytargetcategory2=GROUND VTOL;
+	[sfxtypes]
+	{
+		explosiongenerator0=custom:reb_w_espo;
+		explosiongenerator1=custom:exhaust_awing;
+	}
+}

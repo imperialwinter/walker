@@ -1,0 +1,30 @@
+[imp_w_atmd]
+{
+	name=Shield Generator;
+
+	texture1=shield;
+
+	isshield=1;
+	shieldrepulser=1;
+	smartshield=1;
+	exteriorshield=1;
+	visibleshield=1;
+	visibleshieldrepulse=1;
+	shieldforce=5000;
+	shieldradius=300;
+	shieldmaxspeed=6000;
+	shieldenergyuse=10;
+	shieldpower=1500;
+	shieldstartingpower=1500;
+	shieldpowerregen=10;
+	shieldpowerregenenergy=10;
+	shieldintercepttype=2;
+	shieldbadcolor=0.6 0.05 0.75;
+	shieldgoodcolor=0.0 0.05 0.75;
+	shieldalpha=1;
+
+	[damage]
+	{
+		default=35;
+	}
+}

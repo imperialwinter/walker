@@ -1,0 +1,53 @@
+[unitinfo]
+{
+	unitname=reb_p_fusionadv;
+	objectname=rebel/p-fusionadv.s3o;
+	buildpic=reb_p_fusionadv.png;
+	icontype=building_medium;
+	soundcategory=CORE_FUS;
+	category=GROUND RESOURCE BUILDING;
+	tedclass=ENERGY;
+	yardmap=oooo oooo oooo oooo;
+
+	name=Advanced Fusion Generator;
+	description=Produces Power;
+	side=Rebels;
+	maxdamage=1120;
+	idleautoheal=0;
+	buildcostmetal=210;
+	buildcostenergy=640;
+	buildtime=52;
+	footprintx=16;
+	footprintz=8;
+	cobid=88;
+
+	reclaimable=0;
+	shownanoframe=0;
+	levelground=0;
+
+	energymake=65;
+
+	sightdistance=400;
+
+	onoffable=1;
+	activatewhenbuilt=1;
+
+	maxslope=20;
+	maxwaterdepth=5;
+
+	UseBuildingGroundDecal=1;
+	BuildingGroundDecalType=decals/generic-reb.dds;
+	BuildingGroundDecalDecaySpeed=1;
+	BuildingGroundDecalSizeX=20;
+	BuildingGroundDecalSizeY=12;
+
+	selfdestructcountdown=1;
+	explodeas=MEDIUM_BUILDING;
+	selfdestructas=MEDIUM_BUILDING;
+
+	[sfxtypes]
+	{
+		explosiongenerator0=custom:SMOKEPUFF_SWS_FX;
+		explosiongenerator1=custom:constdust;
+	}
+}

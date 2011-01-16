@@ -1,0 +1,84 @@
+#define TAK
+
+#include "general/standard_commands.h"
+
+piece  base, cockpit, p1, t1, a1, p2, t2, a2, p3, t3, a3, p4, t4, a4, t5, dish, dishrot, f1, f2, antrot, antenna;
+
+static-var  Static_Var_1, Static_Var_2;
+
+#define ONOFF 2
+
+#define SMOKEPIECE1 base
+#define SMOKEPIECE2 base
+#define SMOKEPIECE3 base
+#define SMOKEPIECE4 base
+#include "general/smokeunit_sws.h"
+
+Activate() {
+	set-signal-mask ONOFF;
+	turn dish to x-axis <-120> speed <40>;
+	turn antrot to x-axis <80> speed <40>;
+	turn antenna to x-axis <-120> speed <45>;
+	wait-for-turn dish around x-axis;
+	turn dishrot to x-axis <-80> speed <40>;
+	wait-for-turn dish around x-axis;
+	turn f1 to z-axis <90> speed <40>;
+	wait-for-turn f1 around z-axis;
+	spin f1 around z-axis speed <80>;
+	spin f2 around z-axis speed <-80>;
+	set ARMORED to 0;
+}
+
+Deactivate() {
+	stop-spin f1 around z-axis;
+	stop-spin f2 around z-axis;
+	turn f1 to z-axis <0> speed <70>;
+	turn f2 to z-axis <0> speed <70>;
+	wait-for-turn f1 around z-axis;
+	turn dishrot to x-axis <0> speed <65>;
+	turn antenna to x-axis <0> speed <65>;
+	turn antrot to x-axis <0> speed <60>;
+	wait-for-turn dishrot around x-axis;
+	turn dish to x-axis <0> speed <65>;
+	wait-for-turn dish around x-axis;
+	set ARMORED to 1;
+}
+
+Create() {
+	start-script SmokeUnit_SWS();
+}
+
+RestoreActivation() {
+	set-signal-mask ONOFF;
+	sleep 8000;
+	set ACTIVATION to TRUE;
+	start-script Activate();
+}
+
+HitByWeaponId(z,x,id,damage) {
+	signal ONOFF;
+	set ACTIVATION to FALSE;
+	start-script Deactivate();
+	start-script RestoreActivation();
+	return 100;
+}
+
+Killed(severity, corpsetype) {
+	if(severity <= 25) {
+		corpsetype = 1;
+		explode base type BITMAPONLY | BITMAP;
+		return 0;
+	}
+	if(severity <= 50) {
+		corpsetype = 3;
+		explode base type BITMAPONLY | BITMAP;
+		return 0;
+	}
+	if(severity <= 99) {
+		corpsetype = 4;
+		explode base type BITMAPONLY | BITMAP;
+		return 0;
+	}
+	corpsetype = 4;
+	explode base type BITMAPONLY | BITMAP;
+}

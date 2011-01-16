@@ -1,0 +1,1352 @@
+/* BOS Script Generated from Blender animation */
+
+piece base, lthigh, lshin, lankle, lfoot, rthigh, rshin, rankle, rfoot, torso, gun, firept;
+
+static-var bMoving;
+
+StartMoving() {
+	bMoving = 1;
+}
+
+StopMoving() {
+	bMoving = 0;
+}
+
+Walk() {
+while(1) {
+if(bMoving) {
+move base to z-axis [-0.82] speed [20.54];		// frame 1
+turn base to y-axis <8.22> speed <12.33>;		// frame 1
+turn lthigh to x-axis <8.45> speed <141.02>;		// frame 1
+turn lthigh to y-axis <-0.40> speed <8.83>;		// frame 1
+turn lthigh to z-axis <8.15> speed <18.75>;		// frame 1
+turn lshin to x-axis <-31.33> speed <84.17>;		// frame 1
+turn lshin to y-axis <0.20> speed <2.19>;		// frame 1
+turn lankle to x-axis <-20.42> speed <44.92>;		// frame 1
+turn lankle to y-axis <0.18> speed <2.67>;		// frame 1
+turn lankle to z-axis <0.02> speed <0.86>;		// frame 1
+turn lfoot to x-axis <61.22> speed <35.80>;		// frame 1
+turn lfoot to z-axis <0.35> speed <11.31>;		// frame 1
+turn rthigh to x-axis <-10.25> speed <92.71>;		// frame 1
+turn rthigh to y-axis <-3.48> speed <10.96>;		// frame 1
+turn rthigh to z-axis <22.97> speed <28.02>;		// frame 1
+turn rshin to x-axis <7.87> speed <97.67>;		// frame 1
+turn rshin to y-axis <0.84> speed <2.36>;		// frame 1
+turn rankle to x-axis <-3.63> speed <4.64>;		// frame 1
+turn rankle to y-axis <1.01> speed <1.31>;		// frame 1
+turn rfoot to x-axis <4.62> speed <13.17>;		// frame 1
+turn rfoot to y-axis <1.78> speed <1.73>;		// frame 1
+turn rfoot to z-axis <-15.59> speed <11.84>;		// frame 1
+turn torso to z-axis <5.52> speed <4.84>;		// frame 1
+wait-for-turn torso around z-axis;		// frame 2
+wait-for-turn rfoot around z-axis;		// frame 2
+wait-for-turn rfoot around y-axis;		// frame 2
+wait-for-turn rfoot around x-axis;		// frame 2
+wait-for-turn rankle around y-axis;		// frame 2
+wait-for-turn rankle around x-axis;		// frame 2
+wait-for-turn rshin around y-axis;		// frame 2
+wait-for-turn rshin around x-axis;		// frame 2
+wait-for-turn rthigh around z-axis;		// frame 2
+wait-for-turn rthigh around y-axis;		// frame 2
+wait-for-turn rthigh around x-axis;		// frame 2
+wait-for-turn lfoot around z-axis;		// frame 2
+wait-for-turn lfoot around x-axis;		// frame 2
+wait-for-turn lankle around z-axis;		// frame 2
+wait-for-turn lankle around y-axis;		// frame 2
+wait-for-turn lankle around x-axis;		// frame 2
+wait-for-turn lshin around y-axis;		// frame 2
+wait-for-turn lshin around x-axis;		// frame 2
+wait-for-turn lthigh around z-axis;		// frame 2
+wait-for-turn lthigh around y-axis;		// frame 2
+wait-for-turn lthigh around x-axis;		// frame 2
+wait-for-turn base around y-axis;		// frame 2
+wait-for-move base along z-axis;		//frame 2
+}
+if(bMoving) {
+move base to z-axis [-2.18] speed [33.91];		// frame 2
+turn base to y-axis <6.87> speed <33.68>;		// frame 2
+turn lthigh to x-axis <-2.55> speed <274.89>;		// frame 2
+turn lthigh to y-axis <-1.30> speed <22.56>;		// frame 2
+turn lthigh to z-axis <5.74> speed <60.22>;		// frame 2
+turn lshin to x-axis <-24.02> speed <182.77>;		// frame 2
+turn lshin to y-axis <0.42> speed <5.61>;		// frame 2
+turn lshin to z-axis <-0.00> speed <0.61>;		// frame 2
+turn lankle to x-axis <-16.13> speed <107.30>;		// frame 2
+turn lankle to y-axis <0.45> speed <6.84>;		// frame 2
+turn lankle to z-axis <0.11> speed <2.22>;		// frame 2
+turn lfoot to x-axis <56.95> speed <106.61>;		// frame 2
+turn lfoot to y-axis <-0.15> speed <0.54>;		// frame 2
+turn lfoot to z-axis <1.80> speed <36.35>;		// frame 2
+turn rthigh to x-axis <-2.49> speed <194.13>;		// frame 2
+turn rthigh to y-axis <-4.33> speed <21.29>;		// frame 2
+turn rthigh to z-axis <20.08> speed <72.29>;		// frame 2
+turn rshin to x-axis <1.04> speed <170.67>;		// frame 2
+turn rshin to y-axis <1.03> speed <4.59>;		// frame 2
+turn rshin to z-axis <0.35> speed <0.36>;		// frame 2
+turn rankle to x-axis <-3.27> speed <9.10>;		// frame 2
+turn rankle to y-axis <0.91> speed <2.55>;		// frame 2
+turn rankle to z-axis <0.13> speed <0.37>;		// frame 2
+turn rfoot to x-axis <2.83> speed <44.60>;		// frame 2
+turn rfoot to y-axis <1.59> speed <4.65>;		// frame 2
+turn rfoot to z-axis <-14.28> speed <32.70>;		// frame 2
+turn torso to z-axis <4.98> speed <13.39>;		// frame 2
+wait-for-turn torso around z-axis;		// frame 3
+wait-for-turn rfoot around z-axis;		// frame 3
+wait-for-turn rfoot around y-axis;		// frame 3
+wait-for-turn rfoot around x-axis;		// frame 3
+wait-for-turn rankle around z-axis;		// frame 3
+wait-for-turn rankle around y-axis;		// frame 3
+wait-for-turn rankle around x-axis;		// frame 3
+wait-for-turn rshin around z-axis;		// frame 3
+wait-for-turn rshin around y-axis;		// frame 3
+wait-for-turn rshin around x-axis;		// frame 3
+wait-for-turn rthigh around z-axis;		// frame 3
+wait-for-turn rthigh around y-axis;		// frame 3
+wait-for-turn rthigh around x-axis;		// frame 3
+wait-for-turn lfoot around z-axis;		// frame 3
+wait-for-turn lfoot around y-axis;		// frame 3
+wait-for-turn lfoot around x-axis;		// frame 3
+wait-for-turn lankle around z-axis;		// frame 3
+wait-for-turn lankle around y-axis;		// frame 3
+wait-for-turn lankle around x-axis;		// frame 3
+wait-for-turn lshin around z-axis;		// frame 3
+wait-for-turn lshin around y-axis;		// frame 3
+wait-for-turn lshin around x-axis;		// frame 3
+wait-for-turn lthigh around z-axis;		// frame 3
+wait-for-turn lthigh around y-axis;		// frame 3
+wait-for-turn lthigh around x-axis;		// frame 3
+wait-for-turn base around y-axis;		// frame 3
+wait-for-move base along z-axis;		//frame 3
+}
+if(bMoving) {
+move base to z-axis [-3.52] speed [33.43];		// frame 3
+turn base to y-axis <5.11> speed <44.16>;		// frame 3
+turn lthigh to x-axis <-14.94> speed <309.83>;		// frame 3
+turn lthigh to y-axis <-2.43> speed <28.06>;		// frame 3
+turn lthigh to z-axis <2.35> speed <84.89>;		// frame 3
+turn lshin to x-axis <-15.33> speed <217.07>;		// frame 3
+turn lshin to y-axis <0.70> speed <6.98>;		// frame 3
+turn lshin to z-axis <0.03> speed <0.76>;		// frame 3
+turn lankle to x-axis <-10.87> speed <131.32>;		// frame 3
+turn lankle to y-axis <0.79> speed <8.51>;		// frame 3
+turn lankle to z-axis <0.22> speed <2.76>;		// frame 3
+turn lfoot to x-axis <51.34> speed <140.40>;		// frame 3
+turn lfoot to y-axis <-0.11> speed <0.91>;		// frame 3
+turn lfoot to z-axis <3.81> speed <50.16>;		// frame 3
+turn rthigh to x-axis <6.55> speed <225.79>;		// frame 3
+turn rthigh to y-axis <-4.85> speed <13.05>;		// frame 3
+turn rthigh to z-axis <16.41> speed <91.65>;		// frame 3
+turn rshin to x-axis <-3.01> speed <101.20>;		// frame 3
+turn rshin to y-axis <1.14> speed <2.82>;		// frame 3
+turn rankle to x-axis <-3.04> speed <5.79>;		// frame 3
+turn rankle to y-axis <0.84> speed <1.56>;		// frame 3
+turn rfoot to x-axis <-0.21> speed <75.96>;		// frame 3
+turn rfoot to y-axis <1.36> speed <5.90>;		// frame 3
+turn rfoot to z-axis <-12.54> speed <43.43>;		// frame 3
+turn torso to z-axis <4.28> speed <17.63>;		// frame 3
+wait-for-turn torso around z-axis;		// frame 4
+wait-for-turn rfoot around z-axis;		// frame 4
+wait-for-turn rfoot around y-axis;		// frame 4
+wait-for-turn rfoot around x-axis;		// frame 4
+wait-for-turn rankle around y-axis;		// frame 4
+wait-for-turn rankle around x-axis;		// frame 4
+wait-for-turn rshin around y-axis;		// frame 4
+wait-for-turn rshin around x-axis;		// frame 4
+wait-for-turn rthigh around z-axis;		// frame 4
+wait-for-turn rthigh around y-axis;		// frame 4
+wait-for-turn rthigh around x-axis;		// frame 4
+wait-for-turn lfoot around z-axis;		// frame 4
+wait-for-turn lfoot around y-axis;		// frame 4
+wait-for-turn lfoot around x-axis;		// frame 4
+wait-for-turn lankle around z-axis;		// frame 4
+wait-for-turn lankle around y-axis;		// frame 4
+wait-for-turn lankle around x-axis;		// frame 4
+wait-for-turn lshin around z-axis;		// frame 4
+wait-for-turn lshin around y-axis;		// frame 4
+wait-for-turn lshin around x-axis;		// frame 4
+wait-for-turn lthigh around z-axis;		// frame 4
+wait-for-turn lthigh around y-axis;		// frame 4
+wait-for-turn lthigh around x-axis;		// frame 4
+wait-for-turn base around y-axis;		// frame 4
+wait-for-move base along z-axis;		//frame 4
+}
+if(bMoving) {
+move base to z-axis [-4.55] speed [25.78];		// frame 4
+turn base to y-axis <3.23> speed <47.00>;		// frame 4
+turn lthigh to x-axis <-25.44> speed <262.37>;		// frame 4
+turn lthigh to y-axis <-3.50> speed <26.76>;		// frame 4
+turn lthigh to z-axis <-1.56> speed <97.82>;		// frame 4
+turn lshin to x-axis <-7.51> speed <195.56>;		// frame 4
+turn lshin to y-axis <0.97> speed <6.67>;		// frame 4
+turn lshin to z-axis <0.06> speed <0.72>;		// frame 4
+turn lankle to x-axis <-5.99> speed <121.98>;		// frame 4
+turn lankle to y-axis <1.12> speed <8.12>;		// frame 4
+turn lankle to z-axis <0.32> speed <2.63>;		// frame 4
+turn lfoot to x-axis <45.06> speed <156.81>;		// frame 4
+turn lfoot to y-axis <-0.06> speed <1.14>;		// frame 4
+turn lfoot to z-axis <6.07> speed <56.62>;		// frame 4
+turn rthigh to x-axis <16.94> speed <259.80>;		// frame 4
+turn rthigh to y-axis <-4.82> speed <0.69>;		// frame 4
+turn rthigh to z-axis <12.60> speed <95.18>;		// frame 4
+turn rshin to x-axis <-2.04> speed <24.13>;		// frame 4
+turn rshin to y-axis <-0.11> speed <31.39>;		// frame 4
+turn rshin to z-axis <0.09> speed <6.70>;		// frame 4
+turn rankle to x-axis <-8.91> speed <146.79>;		// frame 4
+turn rankle to y-axis <1.71> speed <21.80>;		// frame 4
+turn rankle to z-axis <0.23> speed <2.62>;		// frame 4
+turn rfoot to x-axis <-6.04> speed <145.96>;		// frame 4
+turn rfoot to y-axis <1.10> speed <6.43>;		// frame 4
+turn rfoot to z-axis <-10.59> speed <48.82>;		// frame 4
+turn torso to z-axis <3.53> speed <18.80>;		// frame 4
+wait-for-turn torso around z-axis;		// frame 5
+wait-for-turn rfoot around z-axis;		// frame 5
+wait-for-turn rfoot around y-axis;		// frame 5
+wait-for-turn rfoot around x-axis;		// frame 5
+wait-for-turn rankle around z-axis;		// frame 5
+wait-for-turn rankle around y-axis;		// frame 5
+wait-for-turn rankle around x-axis;		// frame 5
+wait-for-turn rshin around z-axis;		// frame 5
+wait-for-turn rshin around y-axis;		// frame 5
+wait-for-turn rshin around x-axis;		// frame 5
+wait-for-turn rthigh around z-axis;		// frame 5
+wait-for-turn rthigh around y-axis;		// frame 5
+wait-for-turn rthigh around x-axis;		// frame 5
+wait-for-turn lfoot around z-axis;		// frame 5
+wait-for-turn lfoot around y-axis;		// frame 5
+wait-for-turn lfoot around x-axis;		// frame 5
+wait-for-turn lankle around z-axis;		// frame 5
+wait-for-turn lankle around y-axis;		// frame 5
+wait-for-turn lankle around x-axis;		// frame 5
+wait-for-turn lshin around z-axis;		// frame 5
+wait-for-turn lshin around y-axis;		// frame 5
+wait-for-turn lshin around x-axis;		// frame 5
+wait-for-turn lthigh around z-axis;		// frame 5
+wait-for-turn lthigh around y-axis;		// frame 5
+wait-for-turn lthigh around x-axis;		// frame 5
+wait-for-turn base around y-axis;		// frame 5
+wait-for-move base along z-axis;		//frame 5
+}
+if(bMoving) {
+move base to z-axis [-5.00] speed [11.34];		// frame 5
+turn base to y-axis <1.24> speed <49.69>;		// frame 5
+turn lthigh to x-axis <-30.26> speed <120.48>;		// frame 5
+turn lthigh to y-axis <-4.01> speed <12.78>;		// frame 5
+turn lthigh to z-axis <-5.89> speed <108.23>;		// frame 5
+turn lshin to x-axis <-3.80> speed <92.73>;		// frame 5
+turn lshin to y-axis <1.10> speed <3.19>;		// frame 5
+turn lshin to z-axis <0.07> speed <0.35>;		// frame 5
+turn lankle to x-axis <-3.70> speed <57.48>;		// frame 5
+turn lankle to y-axis <1.27> speed <3.88>;		// frame 5
+turn lankle to z-axis <0.37> speed <1.26>;		// frame 5
+turn lfoot to x-axis <38.26> speed <170.18>;		// frame 5
+turn lfoot to y-axis <-0.01> speed <1.38>;		// frame 5
+turn lfoot to z-axis <8.40> speed <58.08>;		// frame 5
+turn rthigh to x-axis <23.90> speed <174.16>;		// frame 5
+turn rthigh to y-axis <-4.63> speed <4.85>;		// frame 5
+turn rthigh to z-axis <8.75> speed <96.41>;		// frame 5
+turn rshin to x-axis <-0.94> speed <27.59>;		// frame 5
+turn rshin to y-axis <-1.37> speed <31.34>;		// frame 5
+turn rshin to z-axis <-0.18> speed <6.70>;		// frame 5
+turn rankle to x-axis <-15.02> speed <152.78>;		// frame 5
+turn rankle to y-axis <2.59> speed <21.78>;		// frame 5
+turn rankle to z-axis <0.33> speed <2.62>;		// frame 5
+turn rfoot to x-axis <-9.73> speed <92.07>;		// frame 5
+turn rfoot to y-axis <0.88> speed <5.58>;		// frame 5
+turn rfoot to z-axis <-8.65> speed <48.58>;		// frame 5
+turn torso to z-axis <2.73> speed <19.93>;		// frame 5
+wait-for-turn torso around z-axis;		// frame 6
+wait-for-turn rfoot around z-axis;		// frame 6
+wait-for-turn rfoot around y-axis;		// frame 6
+wait-for-turn rfoot around x-axis;		// frame 6
+wait-for-turn rankle around z-axis;		// frame 6
+wait-for-turn rankle around y-axis;		// frame 6
+wait-for-turn rankle around x-axis;		// frame 6
+wait-for-turn rshin around z-axis;		// frame 6
+wait-for-turn rshin around y-axis;		// frame 6
+wait-for-turn rshin around x-axis;		// frame 6
+wait-for-turn rthigh around z-axis;		// frame 6
+wait-for-turn rthigh around y-axis;		// frame 6
+wait-for-turn rthigh around x-axis;		// frame 6
+wait-for-turn lfoot around z-axis;		// frame 6
+wait-for-turn lfoot around y-axis;		// frame 6
+wait-for-turn lfoot around x-axis;		// frame 6
+wait-for-turn lankle around z-axis;		// frame 6
+wait-for-turn lankle around y-axis;		// frame 6
+wait-for-turn lankle around x-axis;		// frame 6
+wait-for-turn lshin around z-axis;		// frame 6
+wait-for-turn lshin around y-axis;		// frame 6
+wait-for-turn lshin around x-axis;		// frame 6
+wait-for-turn lthigh around z-axis;		// frame 6
+wait-for-turn lthigh around y-axis;		// frame 6
+wait-for-turn lthigh around x-axis;		// frame 6
+wait-for-turn base around y-axis;		// frame 6
+wait-for-move base along z-axis;		//frame 6
+}
+if(bMoving) {
+move base to z-axis [-4.62] speed [9.51];		// frame 6
+turn base to y-axis <-0.98> speed <55.57>;		// frame 6
+turn lthigh to x-axis <-20.34> speed <247.95>;		// frame 6
+turn lthigh to y-axis <-2.41> speed <40.01>;		// frame 6
+turn lthigh to z-axis <-11.04> speed <128.70>;		// frame 6
+turn lshin to x-axis <-5.25> speed <36.14>;		// frame 6
+turn lshin to y-axis <-0.30> speed <35.01>;		// frame 6
+turn lshin to z-axis <-0.05> speed <3.17>;		// frame 6
+turn lankle to x-axis <-5.55> speed <46.41>;		// frame 6
+turn lankle to y-axis <1.20> speed <1.97>;		// frame 6
+turn lankle to z-axis <0.28> speed <2.35>;		// frame 6
+turn lfoot to x-axis <30.44> speed <195.32>;		// frame 6
+turn lfoot to y-axis <0.06> speed <1.70>;		// frame 6
+turn lfoot to z-axis <10.71> speed <57.96>;		// frame 6
+turn rthigh to x-axis <25.56> speed <41.47>;		// frame 6
+turn rthigh to y-axis <-4.02> speed <15.20>;		// frame 6
+turn rthigh to z-axis <4.69> speed <101.31>;		// frame 6
+turn rshin to x-axis <-12.06> speed <277.91>;		// frame 6
+turn rshin to y-axis <-0.43> speed <23.51>;		// frame 6
+turn rshin to z-axis <0.04> speed <5.45>;		// frame 6
+turn rankle to x-axis <-0.78> speed <355.90>;		// frame 6
+turn rankle to y-axis <1.33> speed <31.32>;		// frame 6
+turn rankle to z-axis <-0.19> speed <12.94>;		// frame 6
+turn rfoot to x-axis <0.96> speed <267.17>;		// frame 6
+turn rfoot to y-axis <0.75> speed <3.15>;		// frame 6
+turn rfoot to z-axis <-6.85> speed <44.88>;		// frame 6
+turn torso to z-axis <1.84> speed <22.34>;		// frame 6
+wait-for-turn torso around z-axis;		// frame 7
+wait-for-turn rfoot around z-axis;		// frame 7
+wait-for-turn rfoot around y-axis;		// frame 7
+wait-for-turn rfoot around x-axis;		// frame 7
+wait-for-turn rankle around z-axis;		// frame 7
+wait-for-turn rankle around y-axis;		// frame 7
+wait-for-turn rankle around x-axis;		// frame 7
+wait-for-turn rshin around z-axis;		// frame 7
+wait-for-turn rshin around y-axis;		// frame 7
+wait-for-turn rshin around x-axis;		// frame 7
+wait-for-turn rthigh around z-axis;		// frame 7
+wait-for-turn rthigh around y-axis;		// frame 7
+wait-for-turn rthigh around x-axis;		// frame 7
+wait-for-turn lfoot around z-axis;		// frame 7
+wait-for-turn lfoot around y-axis;		// frame 7
+wait-for-turn lfoot around x-axis;		// frame 7
+wait-for-turn lankle around z-axis;		// frame 7
+wait-for-turn lankle around y-axis;		// frame 7
+wait-for-turn lankle around x-axis;		// frame 7
+wait-for-turn lshin around z-axis;		// frame 7
+wait-for-turn lshin around y-axis;		// frame 7
+wait-for-turn lshin around x-axis;		// frame 7
+wait-for-turn lthigh around z-axis;		// frame 7
+wait-for-turn lthigh around y-axis;		// frame 7
+wait-for-turn lthigh around x-axis;		// frame 7
+wait-for-turn base around y-axis;		// frame 7
+wait-for-move base along z-axis;		//frame 7
+}
+if(bMoving) {
+move base to z-axis [-3.79] speed [20.70];		// frame 7
+turn base to y-axis <-3.04> speed <51.45>;		// frame 7
+turn lthigh to x-axis <-9.84> speed <262.58>;		// frame 7
+turn lthigh to y-axis <-0.02> speed <59.79>;		// frame 7
+turn lthigh to z-axis <-15.77> speed <118.12>;		// frame 7
+turn lshin to x-axis <-6.72> speed <36.84>;		// frame 7
+turn lshin to y-axis <-1.70> speed <34.98>;		// frame 7
+turn lshin to z-axis <-0.18> speed <3.17>;		// frame 7
+turn lankle to x-axis <-7.41> speed <46.40>;		// frame 7
+turn lankle to y-axis <1.00> speed <4.79>;		// frame 7
+turn lankle to z-axis <0.14> speed <3.46>;		// frame 7
+turn lfoot to x-axis <22.61> speed <195.74>;		// frame 7
+turn lfoot to y-axis <0.13> speed <1.80>;		// frame 7
+turn lfoot to z-axis <12.82> speed <52.54>;		// frame 7
+turn rthigh to x-axis <25.97> speed <10.12>;		// frame 7
+turn rthigh to y-axis <-3.24> speed <19.52>;		// frame 7
+turn rthigh to z-axis <1.05> speed <91.01>;		// frame 7
+turn rshin to x-axis <-28.68> speed <415.63>;		// frame 7
+turn rshin to y-axis <0.51> speed <23.53>;		// frame 7
+turn rshin to z-axis <0.26> speed <5.45>;		// frame 7
+turn rankle to x-axis <14.28> speed <376.50>;		// frame 7
+turn rankle to y-axis <0.05> speed <32.01>;		// frame 7
+turn rankle to z-axis <-0.70> speed <12.93>;		// frame 7
+turn rfoot to x-axis <14.43> speed <336.76>;		// frame 7
+turn rfoot to y-axis <0.64> speed <2.83>;		// frame 7
+turn rfoot to z-axis <-5.24> speed <40.28>;		// frame 7
+turn torso to z-axis <1.01> speed <20.70>;		// frame 7
+wait-for-turn torso around z-axis;		// frame 8
+wait-for-turn rfoot around z-axis;		// frame 8
+wait-for-turn rfoot around y-axis;		// frame 8
+wait-for-turn rfoot around x-axis;		// frame 8
+wait-for-turn rankle around z-axis;		// frame 8
+wait-for-turn rankle around y-axis;		// frame 8
+wait-for-turn rankle around x-axis;		// frame 8
+wait-for-turn rshin around z-axis;		// frame 8
+wait-for-turn rshin around y-axis;		// frame 8
+wait-for-turn rshin around x-axis;		// frame 8
+wait-for-turn rthigh around z-axis;		// frame 8
+wait-for-turn rthigh around y-axis;		// frame 8
+wait-for-turn rthigh around x-axis;		// frame 8
+wait-for-turn lfoot around z-axis;		// frame 8
+wait-for-turn lfoot around y-axis;		// frame 8
+wait-for-turn lfoot around x-axis;		// frame 8
+wait-for-turn lankle around z-axis;		// frame 8
+wait-for-turn lankle around y-axis;		// frame 8
+wait-for-turn lankle around x-axis;		// frame 8
+wait-for-turn lshin around z-axis;		// frame 8
+wait-for-turn lshin around y-axis;		// frame 8
+wait-for-turn lshin around x-axis;		// frame 8
+wait-for-turn lthigh around z-axis;		// frame 8
+wait-for-turn lthigh around y-axis;		// frame 8
+wait-for-turn lthigh around x-axis;		// frame 8
+wait-for-turn base around y-axis;		// frame 8
+wait-for-move base along z-axis;		//frame 8
+}
+if(bMoving) {
+move base to z-axis [-2.63] speed [29.10];		// frame 8
+turn base to y-axis <-4.95> speed <47.61>;		// frame 8
+turn lthigh to x-axis <-10.28> speed <10.99>;		// frame 8
+turn lthigh to y-axis <1.18> speed <30.00>;		// frame 8
+turn lthigh to z-axis <-19.76> speed <99.86>;		// frame 8
+turn lshin to x-axis <-3.21> speed <87.88>;		// frame 8
+turn lshin to y-axis <-1.47> speed <5.90>;		// frame 8
+turn lshin to z-axis <-0.16> speed <0.63>;		// frame 8
+turn lankle to x-axis <-6.39> speed <25.53>;		// frame 8
+turn lankle to y-axis <0.83> speed <4.42>;		// frame 8
+turn lankle to z-axis <0.07> speed <1.75>;		// frame 8
+turn lfoot to x-axis <13.88> speed <218.28>;		// frame 8
+turn lfoot to y-axis <0.22> speed <2.11>;		// frame 8
+turn lfoot to z-axis <14.87> speed <51.31>;		// frame 8
+turn rthigh to x-axis <26.28> speed <7.73>;		// frame 8
+turn rthigh to y-axis <-2.45> speed <19.68>;		// frame 8
+turn rthigh to z-axis <-2.22> speed <81.79>;		// frame 8
+turn rshin to x-axis <-38.75> speed <251.67>;		// frame 8
+turn rshin to z-axis <0.21> speed <1.04>;		// frame 8
+turn rankle to x-axis <12.96> speed <32.89>;		// frame 8
+turn rankle to y-axis <0.02> speed <0.94>;		// frame 8
+turn rankle to z-axis <-0.61> speed <2.28>;		// frame 8
+turn rfoot to x-axis <17.57> speed <78.41>;		// frame 8
+turn rfoot to y-axis <0.45> speed <4.84>;		// frame 8
+turn rfoot to z-axis <-3.58> speed <41.58>;		// frame 8
+turn torso to z-axis <0.24> speed <19.20>;		// frame 8
+wait-for-turn torso around z-axis;		// frame 9
+wait-for-turn rfoot around z-axis;		// frame 9
+wait-for-turn rfoot around y-axis;		// frame 9
+wait-for-turn rfoot around x-axis;		// frame 9
+wait-for-turn rankle around z-axis;		// frame 9
+wait-for-turn rankle around y-axis;		// frame 9
+wait-for-turn rankle around x-axis;		// frame 9
+wait-for-turn rshin around z-axis;		// frame 9
+wait-for-turn rshin around x-axis;		// frame 9
+wait-for-turn rthigh around z-axis;		// frame 9
+wait-for-turn rthigh around y-axis;		// frame 9
+wait-for-turn rthigh around x-axis;		// frame 9
+wait-for-turn lfoot around z-axis;		// frame 9
+wait-for-turn lfoot around y-axis;		// frame 9
+wait-for-turn lfoot around x-axis;		// frame 9
+wait-for-turn lankle around z-axis;		// frame 9
+wait-for-turn lankle around y-axis;		// frame 9
+wait-for-turn lankle around x-axis;		// frame 9
+wait-for-turn lshin around z-axis;		// frame 9
+wait-for-turn lshin around y-axis;		// frame 9
+wait-for-turn lshin around x-axis;		// frame 9
+wait-for-turn lthigh around z-axis;		// frame 9
+wait-for-turn lthigh around y-axis;		// frame 9
+wait-for-turn lthigh around x-axis;		// frame 9
+wait-for-turn base around y-axis;		// frame 9
+wait-for-move base along z-axis;		//frame 9
+}
+if(bMoving) {
+move base to z-axis [-1.43] speed [29.91];		// frame 9
+turn base to y-axis <-6.68> speed <43.33>;		// frame 9
+turn lthigh to x-axis <-11.17> speed <22.35>;		// frame 9
+turn lthigh to y-axis <1.82> speed <15.92>;		// frame 9
+turn lthigh to z-axis <-23.19> speed <85.75>;		// frame 9
+turn lshin to x-axis <4.89> speed <202.45>;		// frame 9
+turn lshin to y-axis <-0.92> speed <13.58>;		// frame 9
+turn lshin to z-axis <-0.10> speed <1.44>;		// frame 9
+turn lankle to x-axis <-4.02> speed <59.15>;		// frame 9
+turn lankle to y-axis <0.64> speed <4.61>;		// frame 9
+turn lankle to z-axis <0.04> speed <0.91>;		// frame 9
+turn lfoot to x-axis <5.39> speed <212.40>;		// frame 9
+turn lfoot to y-axis <0.30> speed <2.15>;		// frame 9
+turn lfoot to z-axis <16.79> speed <48.07>;		// frame 9
+turn rthigh to x-axis <26.53> speed <6.28>;		// frame 9
+turn rthigh to y-axis <-1.66> speed <19.73>;		// frame 9
+turn rthigh to z-axis <-5.14> speed <73.01>;		// frame 9
+turn rshin to x-axis <-45.77> speed <175.53>;		// frame 9
+turn rshin to y-axis <0.48> speed <0.65>;		// frame 9
+turn rshin to z-axis <0.11> speed <2.57>;		// frame 9
+turn rankle to x-axis <10.11> speed <71.30>;		// frame 9
+turn rankle to y-axis <-0.00> speed <0.49>;		// frame 9
+turn rankle to z-axis <-0.39> speed <5.42>;		// frame 9
+turn rfoot to x-axis <18.83> speed <31.61>;		// frame 9
+turn rfoot to y-axis <0.22> speed <5.57>;		// frame 9
+turn rfoot to z-axis <-1.97> speed <40.08>;		// frame 9
+turn torso to z-axis <-0.46> speed <17.52>;		// frame 9
+wait-for-turn torso around z-axis;		// frame 10
+wait-for-turn rfoot around z-axis;		// frame 10
+wait-for-turn rfoot around y-axis;		// frame 10
+wait-for-turn rfoot around x-axis;		// frame 10
+wait-for-turn rankle around z-axis;		// frame 10
+wait-for-turn rankle around y-axis;		// frame 10
+wait-for-turn rankle around x-axis;		// frame 10
+wait-for-turn rshin around z-axis;		// frame 10
+wait-for-turn rshin around y-axis;		// frame 10
+wait-for-turn rshin around x-axis;		// frame 10
+wait-for-turn rthigh around z-axis;		// frame 10
+wait-for-turn rthigh around y-axis;		// frame 10
+wait-for-turn rthigh around x-axis;		// frame 10
+wait-for-turn lfoot around z-axis;		// frame 10
+wait-for-turn lfoot around y-axis;		// frame 10
+wait-for-turn lfoot around x-axis;		// frame 10
+wait-for-turn lankle around z-axis;		// frame 10
+wait-for-turn lankle around y-axis;		// frame 10
+wait-for-turn lankle around x-axis;		// frame 10
+wait-for-turn lshin around z-axis;		// frame 10
+wait-for-turn lshin around y-axis;		// frame 10
+wait-for-turn lshin around x-axis;		// frame 10
+wait-for-turn lthigh around z-axis;		// frame 10
+wait-for-turn lthigh around y-axis;		// frame 10
+wait-for-turn lthigh around x-axis;		// frame 10
+wait-for-turn base around y-axis;		// frame 10
+wait-for-move base along z-axis;		//frame 10
+}
+if(bMoving) {
+move base to z-axis [-0.45] speed [24.58];		// frame 10
+turn base to y-axis <-8.10> speed <35.50>;		// frame 10
+turn lthigh to x-axis <-12.16> speed <24.69>;		// frame 10
+turn lthigh to y-axis <2.23> speed <10.28>;		// frame 10
+turn lthigh to z-axis <-25.89> speed <67.47>;		// frame 10
+turn lshin to x-axis <13.58> speed <217.13>;		// frame 10
+turn lshin to y-axis <-0.32> speed <15.24>;		// frame 10
+turn lshin to z-axis <-0.03> speed <1.62>;		// frame 10
+turn lankle to x-axis <-1.37> speed <66.21>;		// frame 10
+turn lankle to y-axis <0.41> speed <5.73>;		// frame 10
+turn lankle to z-axis <0.02> speed <0.50>;		// frame 10
+turn lfoot to x-axis <-1.68> speed <176.72>;		// frame 10
+turn lfoot to y-axis <0.38> speed <1.88>;		// frame 10
+turn lfoot to z-axis <18.39> speed <40.04>;		// frame 10
+turn rthigh to x-axis <26.73> speed <4.96>;		// frame 10
+turn rthigh to y-axis <-0.88> speed <19.67>;		// frame 10
+turn rthigh to z-axis <-7.50> speed <58.94>;		// frame 10
+turn rshin to x-axis <-50.59> speed <120.42>;		// frame 10
+turn rshin to y-axis <0.39> speed <2.35>;		// frame 10
+turn rshin to z-axis <-0.01> speed <3.02>;		// frame 10
+turn rankle to x-axis <6.70> speed <85.29>;		// frame 10
+turn rankle to z-axis <-0.15> speed <6.22>;		// frame 10
+turn rfoot to x-axis <19.41> speed <14.39>;		// frame 10
+turn rfoot to y-axis <0.02> speed <5.15>;		// frame 10
+turn rfoot to z-axis <-0.62> speed <33.95>;		// frame 10
+turn torso to z-axis <-1.04> speed <14.40>;		// frame 10
+wait-for-turn torso around z-axis;		// frame 11
+wait-for-turn rfoot around z-axis;		// frame 11
+wait-for-turn rfoot around y-axis;		// frame 11
+wait-for-turn rfoot around x-axis;		// frame 11
+wait-for-turn rankle around z-axis;		// frame 11
+wait-for-turn rankle around x-axis;		// frame 11
+wait-for-turn rshin around z-axis;		// frame 11
+wait-for-turn rshin around y-axis;		// frame 11
+wait-for-turn rshin around x-axis;		// frame 11
+wait-for-turn rthigh around z-axis;		// frame 11
+wait-for-turn rthigh around y-axis;		// frame 11
+wait-for-turn rthigh around x-axis;		// frame 11
+wait-for-turn lfoot around z-axis;		// frame 11
+wait-for-turn lfoot around y-axis;		// frame 11
+wait-for-turn lfoot around x-axis;		// frame 11
+wait-for-turn lankle around z-axis;		// frame 11
+wait-for-turn lankle around y-axis;		// frame 11
+wait-for-turn lankle around x-axis;		// frame 11
+wait-for-turn lshin around z-axis;		// frame 11
+wait-for-turn lshin around y-axis;		// frame 11
+wait-for-turn lshin around x-axis;		// frame 11
+wait-for-turn lthigh around z-axis;		// frame 11
+wait-for-turn lthigh around y-axis;		// frame 11
+wait-for-turn lthigh around x-axis;		// frame 11
+wait-for-turn base around y-axis;		// frame 11
+wait-for-move base along z-axis;		//frame 11
+}
+if(bMoving) {
+move base to z-axis [-0.00] speed [11.19];		// frame 11
+turn base to y-axis <-8.71> speed <15.38>;		// frame 11
+turn lthigh to x-axis <-12.69> speed <13.22>;		// frame 11
+turn lthigh to y-axis <2.77> speed <13.37>;		// frame 11
+turn lthigh to z-axis <-27.03> speed <28.51>;		// frame 11
+turn lshin to x-axis <17.93> speed <108.84>;		// frame 11
+turn lshin to y-axis <-0.00> speed <7.88>;		// frame 11
+turn lshin to z-axis <0.00> speed <0.84>;		// frame 11
+turn lankle to x-axis <0.00> speed <34.32>;		// frame 11
+turn lankle to y-axis <0.00> speed <10.34>;		// frame 11
+turn lankle to z-axis <0.00> speed <0.39>;		// frame 11
+turn lfoot to x-axis <-4.89> speed <80.27>;		// frame 11
+turn lfoot to y-axis <0.41> speed <0.85>;		// frame 11
+turn lfoot to z-axis <19.10> speed <17.56>;		// frame 11
+turn rthigh to x-axis <26.82> speed <2.37>;		// frame 11
+turn rthigh to y-axis <-0.10> speed <19.32>;		// frame 11
+turn rthigh to z-axis <-8.51> speed <25.33>;		// frame 11
+turn rshin to x-axis <-52.50> speed <47.95>;		// frame 11
+turn rshin to y-axis <0.18> speed <5.21>;		// frame 11
+turn rshin to z-axis <-0.09> speed <2.00>;		// frame 11
+turn rankle to x-axis <3.81> speed <72.28>;		// frame 11
+turn rankle to z-axis <-0.00> speed <3.63>;		// frame 11
+turn rfoot to x-axis <20.56> speed <28.91>;		// frame 11
+turn rfoot to y-axis <-0.08> speed <2.41>;		// frame 11
+turn rfoot to z-axis <-0.01> speed <15.06>;		// frame 11
+turn torso to z-axis <-1.29> speed <6.25>;		// frame 11
+wait-for-turn torso around z-axis;		// frame 12
+wait-for-turn rfoot around z-axis;		// frame 12
+wait-for-turn rfoot around y-axis;		// frame 12
+wait-for-turn rfoot around x-axis;		// frame 12
+wait-for-turn rankle around z-axis;		// frame 12
+wait-for-turn rankle around x-axis;		// frame 12
+wait-for-turn rshin around z-axis;		// frame 12
+wait-for-turn rshin around y-axis;		// frame 12
+wait-for-turn rshin around x-axis;		// frame 12
+wait-for-turn rthigh around z-axis;		// frame 12
+wait-for-turn rthigh around y-axis;		// frame 12
+wait-for-turn rthigh around x-axis;		// frame 12
+wait-for-turn lfoot around z-axis;		// frame 12
+wait-for-turn lfoot around y-axis;		// frame 12
+wait-for-turn lfoot around x-axis;		// frame 12
+wait-for-turn lankle around z-axis;		// frame 12
+wait-for-turn lankle around y-axis;		// frame 12
+wait-for-turn lankle around x-axis;		// frame 12
+wait-for-turn lshin around z-axis;		// frame 12
+wait-for-turn lshin around y-axis;		// frame 12
+wait-for-turn lshin around x-axis;		// frame 12
+wait-for-turn lthigh around z-axis;		// frame 12
+wait-for-turn lthigh around y-axis;		// frame 12
+wait-for-turn lthigh around x-axis;		// frame 12
+wait-for-turn base around y-axis;		// frame 12
+wait-for-move base along z-axis;		//frame 12
+}
+if(bMoving) {
+move base to y-axis [-0.05] speed [1.30];		// frame 12
+move base to z-axis [-0.44] speed [10.94];		// frame 12
+turn base to y-axis <-8.42> speed <7.23>;		// frame 12
+turn lthigh to x-axis <-8.68> speed <100.10>;		// frame 12
+turn lthigh to y-axis <3.87> speed <27.51>;		// frame 12
+turn lthigh to z-axis <-26.20> speed <20.73>;		// frame 12
+turn lshin to x-axis <16.76> speed <29.26>;		// frame 12
+turn lshin to y-axis <-0.05> speed <1.18>;		// frame 12
+turn lankle to x-axis <-2.48> speed <62.01>;		// frame 12
+turn lankle to y-axis <-0.85> speed <21.13>;		// frame 12
+turn lankle to z-axis <-0.02> speed <0.44>;		// frame 12
+turn lfoot to x-axis <-4.83> speed <1.54>;		// frame 12
+turn lfoot to z-axis <18.68> speed <10.29>;		// frame 12
+turn rthigh to x-axis <21.52> speed <132.63>;		// frame 12
+turn rthigh to y-axis <0.70> speed <19.98>;		// frame 12
+turn rthigh to z-axis <-8.04> speed <11.78>;		// frame 12
+turn rshin to x-axis <-49.55> speed <73.96>;		// frame 12
+turn rshin to y-axis <-0.16> speed <8.50>;		// frame 12
+turn rshin to z-axis <-0.12> speed <0.67>;		// frame 12
+turn rankle to x-axis <2.11> speed <42.34>;		// frame 12
+turn rankle to y-axis <0.00> speed <0.46>;		// frame 12
+turn rankle to z-axis <0.02> speed <0.59>;		// frame 12
+turn rfoot to x-axis <23.38> speed <70.37>;		// frame 12
+turn rfoot to y-axis <-0.03> speed <1.19>;		// frame 12
+turn rfoot to z-axis <-0.31> speed <7.35>;		// frame 12
+turn torso to z-axis <-1.15> speed <3.33>;		// frame 12
+wait-for-turn torso around z-axis;		// frame 13
+wait-for-turn rfoot around z-axis;		// frame 13
+wait-for-turn rfoot around y-axis;		// frame 13
+wait-for-turn rfoot around x-axis;		// frame 13
+wait-for-turn rankle around z-axis;		// frame 13
+wait-for-turn rankle around y-axis;		// frame 13
+wait-for-turn rankle around x-axis;		// frame 13
+wait-for-turn rshin around z-axis;		// frame 13
+wait-for-turn rshin around y-axis;		// frame 13
+wait-for-turn rshin around x-axis;		// frame 13
+wait-for-turn rthigh around z-axis;		// frame 13
+wait-for-turn rthigh around y-axis;		// frame 13
+wait-for-turn rthigh around x-axis;		// frame 13
+wait-for-turn lfoot around z-axis;		// frame 13
+wait-for-turn lfoot around x-axis;		// frame 13
+wait-for-turn lankle around z-axis;		// frame 13
+wait-for-turn lankle around y-axis;		// frame 13
+wait-for-turn lankle around x-axis;		// frame 13
+wait-for-turn lshin around y-axis;		// frame 13
+wait-for-turn lshin around x-axis;		// frame 13
+wait-for-turn lthigh around z-axis;		// frame 13
+wait-for-turn lthigh around y-axis;		// frame 13
+wait-for-turn lthigh around x-axis;		// frame 13
+wait-for-turn base around y-axis;		// frame 13
+wait-for-move base along z-axis;		//frame 13
+wait-for-move base along y-axis;		//frame 13
+}
+if(bMoving) {
+move base to y-axis [-0.19] speed [3.51];		// frame 13
+move base to z-axis [-1.59] speed [28.79];		// frame 13
+turn base to y-axis <-7.52> speed <22.56>;		// frame 13
+turn lthigh to x-axis <0.36> speed <226.01>;		// frame 13
+turn lthigh to y-axis <5.19> speed <32.95>;		// frame 13
+turn lthigh to z-axis <-23.83> speed <59.20>;		// frame 13
+turn lshin to x-axis <13.11> speed <91.25>;		// frame 13
+turn lshin to y-axis <-0.21> speed <3.98>;		// frame 13
+turn lankle to x-axis <-8.22> speed <143.53>;		// frame 13
+turn lankle to y-axis <-1.86> speed <25.28>;		// frame 13
+turn lankle to z-axis <-0.04> speed <0.48>;		// frame 13
+turn lfoot to x-axis <-4.51> speed <7.97>;		// frame 13
+turn lfoot to z-axis <17.46> speed <30.50>;		// frame 13
+turn rthigh to x-axis <8.95> speed <314.20>;		// frame 13
+turn rthigh to y-axis <1.50> speed <19.98>;		// frame 13
+turn rthigh to z-axis <-6.55> speed <37.33>;		// frame 13
+turn rshin to x-axis <-41.49> speed <201.48>;		// frame 13
+turn rshin to y-axis <-0.56> speed <9.96>;		// frame 13
+turn rshin to z-axis <-0.13> speed <0.35>;		// frame 13
+turn rankle to x-axis <1.01> speed <27.65>;		// frame 13
+turn rankle to y-axis <0.06> speed <1.44>;		// frame 13
+turn rankle to z-axis <0.04> speed <0.30>;		// frame 13
+turn rfoot to x-axis <26.94> speed <89.05>;		// frame 13
+turn rfoot to y-axis <0.11> speed <3.57>;		// frame 13
+turn rfoot to z-axis <-1.22> speed <22.66>;		// frame 13
+turn torso to z-axis <-0.74> speed <10.40>;		// frame 13
+wait-for-turn torso around z-axis;		// frame 14
+wait-for-turn rfoot around z-axis;		// frame 14
+wait-for-turn rfoot around y-axis;		// frame 14
+wait-for-turn rfoot around x-axis;		// frame 14
+wait-for-turn rankle around z-axis;		// frame 14
+wait-for-turn rankle around y-axis;		// frame 14
+wait-for-turn rankle around x-axis;		// frame 14
+wait-for-turn rshin around z-axis;		// frame 14
+wait-for-turn rshin around y-axis;		// frame 14
+wait-for-turn rshin around x-axis;		// frame 14
+wait-for-turn rthigh around z-axis;		// frame 14
+wait-for-turn rthigh around y-axis;		// frame 14
+wait-for-turn rthigh around x-axis;		// frame 14
+wait-for-turn lfoot around z-axis;		// frame 14
+wait-for-turn lfoot around x-axis;		// frame 14
+wait-for-turn lankle around z-axis;		// frame 14
+wait-for-turn lankle around y-axis;		// frame 14
+wait-for-turn lankle around x-axis;		// frame 14
+wait-for-turn lshin around y-axis;		// frame 14
+wait-for-turn lshin around x-axis;		// frame 14
+wait-for-turn lthigh around z-axis;		// frame 14
+wait-for-turn lthigh around y-axis;		// frame 14
+wait-for-turn lthigh around x-axis;		// frame 14
+wait-for-turn base around y-axis;		// frame 14
+wait-for-move base along z-axis;		//frame 14
+wait-for-move base along y-axis;		//frame 14
+}
+if(bMoving) {
+move base to y-axis [-0.37] speed [4.40];		// frame 14
+move base to z-axis [-2.96] speed [34.15];		// frame 14
+turn base to y-axis <-6.31> speed <30.36>;		// frame 14
+turn lthigh to x-axis <10.01> speed <241.33>;		// frame 14
+turn lthigh to y-axis <6.42> speed <30.94>;		// frame 14
+turn lthigh to z-axis <-20.78> speed <76.37>;		// frame 14
+turn lshin to x-axis <8.23> speed <122.05>;		// frame 14
+turn lshin to y-axis <-0.46> speed <6.30>;		// frame 14
+turn lankle to x-axis <-14.53> speed <157.69>;		// frame 14
+turn lankle to y-axis <-2.81> speed <23.75>;		// frame 14
+turn lankle to z-axis <-0.06> speed <0.53>;		// frame 14
+turn lfoot to x-axis <-3.22> speed <32.24>;		// frame 14
+turn lfoot to y-axis <0.40> speed <0.31>;		// frame 14
+turn lfoot to z-axis <15.86> speed <40.13>;		// frame 14
+turn rthigh to x-axis <-5.66> speed <365.22>;		// frame 14
+turn rthigh to y-axis <2.26> speed <19.07>;		// frame 14
+turn rthigh to z-axis <-4.52> speed <50.54>;		// frame 14
+turn rshin to x-axis <-31.45> speed <250.96>;		// frame 14
+turn rshin to y-axis <-0.97> speed <10.26>;		// frame 14
+turn rankle to x-axis <0.20> speed <20.09>;		// frame 14
+turn rankle to y-axis <0.14> speed <1.94>;		// frame 14
+turn rfoot to x-axis <30.68> speed <93.46>;		// frame 14
+turn rfoot to y-axis <0.30> speed <4.72>;		// frame 14
+turn rfoot to z-axis <-2.43> speed <30.35>;		// frame 14
+turn torso to z-axis <-0.18> speed <14.00>;		// frame 14
+wait-for-turn torso around z-axis;		// frame 15
+wait-for-turn rfoot around z-axis;		// frame 15
+wait-for-turn rfoot around y-axis;		// frame 15
+wait-for-turn rfoot around x-axis;		// frame 15
+wait-for-turn rankle around y-axis;		// frame 15
+wait-for-turn rankle around x-axis;		// frame 15
+wait-for-turn rshin around y-axis;		// frame 15
+wait-for-turn rshin around x-axis;		// frame 15
+wait-for-turn rthigh around z-axis;		// frame 15
+wait-for-turn rthigh around y-axis;		// frame 15
+wait-for-turn rthigh around x-axis;		// frame 15
+wait-for-turn lfoot around z-axis;		// frame 15
+wait-for-turn lfoot around y-axis;		// frame 15
+wait-for-turn lfoot around x-axis;		// frame 15
+wait-for-turn lankle around z-axis;		// frame 15
+wait-for-turn lankle around y-axis;		// frame 15
+wait-for-turn lankle around x-axis;		// frame 15
+wait-for-turn lshin around y-axis;		// frame 15
+wait-for-turn lshin around x-axis;		// frame 15
+wait-for-turn lthigh around z-axis;		// frame 15
+wait-for-turn lthigh around y-axis;		// frame 15
+wait-for-turn lthigh around x-axis;		// frame 15
+wait-for-turn base around y-axis;		// frame 15
+wait-for-move base along z-axis;		//frame 15
+wait-for-move base along y-axis;		//frame 15
+}
+if(bMoving) {
+move base to y-axis [-0.53] speed [3.99];		// frame 15
+move base to z-axis [-4.22] speed [31.51];		// frame 15
+turn base to y-axis <-4.94> speed <34.31>;		// frame 15
+turn lthigh to x-axis <14.98> speed <124.10>;		// frame 15
+turn lthigh to y-axis <7.01> speed <14.63>;		// frame 15
+turn lthigh to z-axis <-17.71> speed <76.70>;		// frame 15
+turn lshin to x-axis <2.61> speed <140.40>;		// frame 15
+turn lshin to y-axis <-0.79> speed <8.33>;		// frame 15
+turn lshin to z-axis <-0.02> speed <0.43>;		// frame 15
+turn lankle to x-axis <-17.76> speed <80.74>;		// frame 15
+turn lankle to y-axis <-3.26> speed <11.23>;		// frame 15
+turn lankle to z-axis <-0.09> speed <0.67>;		// frame 15
+turn lfoot to x-axis <0.09> speed <82.86>;		// frame 15
+turn lfoot to y-axis <0.36> speed <0.85>;		// frame 15
+turn lfoot to z-axis <14.16> speed <42.48>;		// frame 15
+turn rthigh to x-axis <-19.19> speed <338.20>;		// frame 15
+turn rthigh to y-axis <2.86> speed <15.08>;		// frame 15
+turn rthigh to z-axis <-2.19> speed <58.29>;		// frame 15
+turn rshin to x-axis <-21.22> speed <255.66>;		// frame 15
+turn rshin to y-axis <-1.31> speed <8.62>;		// frame 15
+turn rankle to x-axis <-0.43> speed <15.81>;		// frame 15
+turn rankle to y-axis <0.23> speed <2.18>;		// frame 15
+turn rfoot to x-axis <33.81> speed <78.18>;		// frame 15
+turn rfoot to y-axis <0.50> speed <5.07>;		// frame 15
+turn rfoot to z-axis <-3.78> speed <33.82>;		// frame 15
+turn torso to z-axis <0.45> speed <15.82>;		// frame 15
+wait-for-turn torso around z-axis;		// frame 16
+wait-for-turn rfoot around z-axis;		// frame 16
+wait-for-turn rfoot around y-axis;		// frame 16
+wait-for-turn rfoot around x-axis;		// frame 16
+wait-for-turn rankle around y-axis;		// frame 16
+wait-for-turn rankle around x-axis;		// frame 16
+wait-for-turn rshin around y-axis;		// frame 16
+wait-for-turn rshin around x-axis;		// frame 16
+wait-for-turn rthigh around z-axis;		// frame 16
+wait-for-turn rthigh around y-axis;		// frame 16
+wait-for-turn rthigh around x-axis;		// frame 16
+wait-for-turn lfoot around z-axis;		// frame 16
+wait-for-turn lfoot around y-axis;		// frame 16
+wait-for-turn lfoot around x-axis;		// frame 16
+wait-for-turn lankle around z-axis;		// frame 16
+wait-for-turn lankle around y-axis;		// frame 16
+wait-for-turn lankle around x-axis;		// frame 16
+wait-for-turn lshin around z-axis;		// frame 16
+wait-for-turn lshin around y-axis;		// frame 16
+wait-for-turn lshin around x-axis;		// frame 16
+wait-for-turn lthigh around z-axis;		// frame 16
+wait-for-turn lthigh around y-axis;		// frame 16
+wait-for-turn lthigh around x-axis;		// frame 16
+wait-for-turn base around y-axis;		// frame 16
+wait-for-move base along z-axis;		//frame 16
+wait-for-move base along y-axis;		//frame 16
+}
+if(bMoving) {
+move base to y-axis [-0.65] speed [2.99];		// frame 16
+move base to z-axis [-5.16] speed [23.65];		// frame 16
+turn base to y-axis <-3.55> speed <34.77>;		// frame 16
+turn lthigh to x-axis <13.51> speed <36.59>;		// frame 16
+turn lthigh to y-axis <5.81> speed <29.94>;		// frame 16
+turn lthigh to z-axis <-15.35> speed <59.04>;		// frame 16
+turn lshin to x-axis <-4.01> speed <165.51>;		// frame 16
+turn lshin to y-axis <-1.34> speed <13.72>;		// frame 16
+turn lshin to z-axis <-0.09> speed <1.58>;		// frame 16
+turn lankle to x-axis <-16.45> speed <32.78>;		// frame 16
+turn lankle to y-axis <-2.45> speed <20.16>;		// frame 16
+turn lankle to z-axis <-0.13> speed <1.21>;		// frame 16
+turn lfoot to x-axis <6.21> speed <152.93>;		// frame 16
+turn lfoot to y-axis <0.30> speed <1.50>;		// frame 16
+turn lfoot to z-axis <12.63> speed <38.13>;		// frame 16
+turn rthigh to x-axis <-29.51> speed <258.00>;		// frame 16
+turn rthigh to y-axis <3.24> speed <9.44>;		// frame 16
+turn rthigh to z-axis <0.23> speed <60.66>;		// frame 16
+turn rshin to x-axis <-9.95> speed <281.71>;		// frame 16
+turn rshin to y-axis <-1.56> speed <6.27>;		// frame 16
+turn rankle to x-axis <-1.11> speed <17.12>;		// frame 16
+turn rankle to y-axis <0.34> speed <2.91>;		// frame 16
+turn rfoot to x-axis <35.88> speed <51.97>;		// frame 16
+turn rfoot to y-axis <0.70> speed <5.03>;		// frame 16
+turn rfoot to z-axis <-5.14> speed <33.98>;		// frame 16
+turn torso to z-axis <1.09> speed <15.98>;		// frame 16
+wait-for-turn torso around z-axis;		// frame 17
+wait-for-turn rfoot around z-axis;		// frame 17
+wait-for-turn rfoot around y-axis;		// frame 17
+wait-for-turn rfoot around x-axis;		// frame 17
+wait-for-turn rankle around y-axis;		// frame 17
+wait-for-turn rankle around x-axis;		// frame 17
+wait-for-turn rshin around y-axis;		// frame 17
+wait-for-turn rshin around x-axis;		// frame 17
+wait-for-turn rthigh around z-axis;		// frame 17
+wait-for-turn rthigh around y-axis;		// frame 17
+wait-for-turn rthigh around x-axis;		// frame 17
+wait-for-turn lfoot around z-axis;		// frame 17
+wait-for-turn lfoot around y-axis;		// frame 17
+wait-for-turn lfoot around x-axis;		// frame 17
+wait-for-turn lankle around z-axis;		// frame 17
+wait-for-turn lankle around y-axis;		// frame 17
+wait-for-turn lankle around x-axis;		// frame 17
+wait-for-turn lshin around z-axis;		// frame 17
+wait-for-turn lshin around y-axis;		// frame 17
+wait-for-turn lshin around x-axis;		// frame 17
+wait-for-turn lthigh around z-axis;		// frame 17
+wait-for-turn lthigh around y-axis;		// frame 17
+wait-for-turn lthigh around x-axis;		// frame 17
+wait-for-turn base around y-axis;		// frame 17
+wait-for-move base along z-axis;		//frame 17
+wait-for-move base along y-axis;		//frame 17
+}
+if(bMoving) {
+move base to y-axis [-0.70] speed [1.21];		// frame 17
+move base to z-axis [-5.57] speed [10.20];		// frame 17
+turn base to y-axis <-2.05> speed <37.49>;		// frame 17
+turn lthigh to x-axis <12.07> speed <36.13>;		// frame 17
+turn lthigh to y-axis <3.93> speed <47.09>;		// frame 17
+turn lthigh to z-axis <-12.88> speed <61.67>;		// frame 17
+turn lshin to x-axis <-10.29> speed <157.15>;		// frame 17
+turn lshin to y-axis <-1.66> speed <8.08>;		// frame 17
+turn lshin to z-axis <-0.13> speed <1.07>;		// frame 17
+turn lankle to x-axis <-15.14> speed <32.64>;		// frame 17
+turn lankle to y-axis <-1.27> speed <29.60>;		// frame 17
+turn lankle to z-axis <-0.16> speed <0.73>;		// frame 17
+turn lfoot to x-axis <13.48> speed <181.70>;		// frame 17
+turn lfoot to y-axis <0.23> speed <1.75>;		// frame 17
+turn lfoot to z-axis <11.07> speed <39.03>;		// frame 17
+turn rthigh to x-axis <-34.15> speed <116.00>;		// frame 17
+turn rthigh to y-axis <3.37> speed <3.18>;		// frame 17
+turn rthigh to z-axis <2.96> speed <68.02>;		// frame 17
+turn rshin to x-axis <-3.45> speed <162.66>;		// frame 17
+turn rshin to y-axis <-1.66> speed <2.47>;		// frame 17
+turn rankle to x-axis <-1.47> speed <8.80>;		// frame 17
+turn rankle to y-axis <0.41> speed <1.61>;		// frame 17
+turn rfoot to x-axis <36.66> speed <19.39>;		// frame 17
+turn rfoot to y-axis <0.88> speed <4.44>;		// frame 17
+turn rfoot to z-axis <-6.55> speed <35.17>;		// frame 17
+turn torso to z-axis <1.78> speed <17.23>;		// frame 17
+wait-for-turn torso around z-axis;		// frame 18
+wait-for-turn rfoot around z-axis;		// frame 18
+wait-for-turn rfoot around y-axis;		// frame 18
+wait-for-turn rfoot around x-axis;		// frame 18
+wait-for-turn rankle around y-axis;		// frame 18
+wait-for-turn rankle around x-axis;		// frame 18
+wait-for-turn rshin around y-axis;		// frame 18
+wait-for-turn rshin around x-axis;		// frame 18
+wait-for-turn rthigh around z-axis;		// frame 18
+wait-for-turn rthigh around y-axis;		// frame 18
+wait-for-turn rthigh around x-axis;		// frame 18
+wait-for-turn lfoot around z-axis;		// frame 18
+wait-for-turn lfoot around y-axis;		// frame 18
+wait-for-turn lfoot around x-axis;		// frame 18
+wait-for-turn lankle around z-axis;		// frame 18
+wait-for-turn lankle around y-axis;		// frame 18
+wait-for-turn lankle around x-axis;		// frame 18
+wait-for-turn lshin around z-axis;		// frame 18
+wait-for-turn lshin around y-axis;		// frame 18
+wait-for-turn lshin around x-axis;		// frame 18
+wait-for-turn lthigh around z-axis;		// frame 18
+wait-for-turn lthigh around y-axis;		// frame 18
+wait-for-turn lthigh around x-axis;		// frame 18
+wait-for-turn base around y-axis;		// frame 18
+wait-for-move base along z-axis;		//frame 18
+wait-for-move base along y-axis;		//frame 18
+}
+if(bMoving) {
+move base to y-axis [-0.67] speed [0.73];		// frame 18
+move base to z-axis [-5.35] speed [5.49];		// frame 18
+turn base to y-axis <-0.32> speed <43.19>;		// frame 18
+turn lthigh to x-axis <12.15> speed <2.13>;		// frame 18
+turn lthigh to y-axis <2.73> speed <29.87>;		// frame 18
+turn lthigh to z-axis <-9.64> speed <80.96>;		// frame 18
+turn lshin to x-axis <-15.44> speed <128.70>;		// frame 18
+turn lshin to y-axis <-1.59> speed <1.86>;		// frame 18
+turn lankle to x-axis <-15.44> speed <7.42>;		// frame 18
+turn lankle to y-axis <-0.66> speed <15.22>;		// frame 18
+turn lfoot to x-axis <21.31> speed <195.91>;		// frame 18
+turn lfoot to y-axis <0.16> speed <1.77>;		// frame 18
+turn lfoot to z-axis <9.27> speed <45.02>;		// frame 18
+turn rthigh to x-axis <-33.29> speed <21.56>;		// frame 18
+turn rthigh to y-axis <3.10> speed <6.72>;		// frame 18
+turn rthigh to z-axis <6.23> speed <81.89>;		// frame 18
+turn rshin to x-axis <-2.71> speed <18.37>;		// frame 18
+turn rshin to y-axis <-1.18> speed <12.10>;		// frame 18
+turn rshin to z-axis <0.00> speed <3.57>;		// frame 18
+turn rankle to x-axis <0.48> speed <48.56>;		// frame 18
+turn rankle to y-axis <0.05> speed <9.00>;		// frame 18
+turn rankle to z-axis <-0.08> speed <3.38>;		// frame 18
+turn rfoot to x-axis <34.25> speed <60.26>;		// frame 18
+turn rfoot to y-axis <1.02> speed <3.44>;		// frame 18
+turn rfoot to z-axis <-8.07> speed <38.15>;		// frame 18
+turn torso to z-axis <2.58> speed <19.83>;		// frame 18
+wait-for-turn torso around z-axis;		// frame 19
+wait-for-turn rfoot around z-axis;		// frame 19
+wait-for-turn rfoot around y-axis;		// frame 19
+wait-for-turn rfoot around x-axis;		// frame 19
+wait-for-turn rankle around z-axis;		// frame 19
+wait-for-turn rankle around y-axis;		// frame 19
+wait-for-turn rankle around x-axis;		// frame 19
+wait-for-turn rshin around z-axis;		// frame 19
+wait-for-turn rshin around y-axis;		// frame 19
+wait-for-turn rshin around x-axis;		// frame 19
+wait-for-turn rthigh around z-axis;		// frame 19
+wait-for-turn rthigh around y-axis;		// frame 19
+wait-for-turn rthigh around x-axis;		// frame 19
+wait-for-turn lfoot around z-axis;		// frame 19
+wait-for-turn lfoot around y-axis;		// frame 19
+wait-for-turn lfoot around x-axis;		// frame 19
+wait-for-turn lankle around y-axis;		// frame 19
+wait-for-turn lankle around x-axis;		// frame 19
+wait-for-turn lshin around y-axis;		// frame 19
+wait-for-turn lshin around x-axis;		// frame 19
+wait-for-turn lthigh around z-axis;		// frame 19
+wait-for-turn lthigh around y-axis;		// frame 19
+wait-for-turn lthigh around x-axis;		// frame 19
+wait-for-turn base around y-axis;		// frame 19
+wait-for-move base along z-axis;		//frame 19
+wait-for-move base along y-axis;		//frame 19
+}
+if(bMoving) {
+move base to y-axis [-0.58] speed [2.15];		// frame 19
+move base to z-axis [-4.71] speed [16.00];		// frame 19
+turn base to y-axis <1.50> speed <45.54>;		// frame 19
+turn lthigh to x-axis <12.40> speed <6.26>;		// frame 19
+turn lthigh to y-axis <1.88> speed <21.19>;		// frame 19
+turn lthigh to z-axis <-6.07> speed <89.38>;		// frame 19
+turn lshin to x-axis <-20.03> speed <114.56>;		// frame 19
+turn lshin to y-axis <-1.37> speed <5.50>;		// frame 19
+turn lshin to z-axis <-0.11> speed <0.29>;		// frame 19
+turn lankle to x-axis <-16.31> speed <21.89>;		// frame 19
+turn lankle to y-axis <-0.34> speed <7.83>;		// frame 19
+turn lankle to z-axis <-0.14> speed <0.46>;		// frame 19
+turn lfoot to x-axis <29.31> speed <199.85>;		// frame 19
+turn lfoot to y-axis <0.09> speed <1.77>;		// frame 19
+turn lfoot to z-axis <7.37> speed <47.50>;		// frame 19
+turn rthigh to x-axis <-30.77> speed <62.85>;		// frame 19
+turn rthigh to y-axis <2.30> speed <19.83>;		// frame 19
+turn rthigh to z-axis <9.74> speed <87.71>;		// frame 19
+turn rshin to x-axis <-2.41> speed <7.65>;		// frame 19
+turn rshin to y-axis <-0.06> speed <27.90>;		// frame 19
+turn rshin to z-axis <0.33> speed <8.23>;		// frame 19
+turn rankle to x-axis <4.94> speed <111.68>;		// frame 19
+turn rankle to y-axis <-0.78> speed <20.74>;		// frame 19
+turn rankle to z-axis <-0.39> speed <7.79>;		// frame 19
+turn rfoot to x-axis <28.03> speed <155.44>;		// frame 19
+turn rfoot to y-axis <1.14> speed <2.97>;		// frame 19
+turn rfoot to z-axis <-9.65> speed <39.29>;		// frame 19
+turn torso to z-axis <3.41> speed <20.92>;		// frame 19
+wait-for-turn torso around z-axis;		// frame 20
+wait-for-turn rfoot around z-axis;		// frame 20
+wait-for-turn rfoot around y-axis;		// frame 20
+wait-for-turn rfoot around x-axis;		// frame 20
+wait-for-turn rankle around z-axis;		// frame 20
+wait-for-turn rankle around y-axis;		// frame 20
+wait-for-turn rankle around x-axis;		// frame 20
+wait-for-turn rshin around z-axis;		// frame 20
+wait-for-turn rshin around y-axis;		// frame 20
+wait-for-turn rshin around x-axis;		// frame 20
+wait-for-turn rthigh around z-axis;		// frame 20
+wait-for-turn rthigh around y-axis;		// frame 20
+wait-for-turn rthigh around x-axis;		// frame 20
+wait-for-turn lfoot around z-axis;		// frame 20
+wait-for-turn lfoot around y-axis;		// frame 20
+wait-for-turn lfoot around x-axis;		// frame 20
+wait-for-turn lankle around z-axis;		// frame 20
+wait-for-turn lankle around y-axis;		// frame 20
+wait-for-turn lankle around x-axis;		// frame 20
+wait-for-turn lshin around z-axis;		// frame 20
+wait-for-turn lshin around y-axis;		// frame 20
+wait-for-turn lshin around x-axis;		// frame 20
+wait-for-turn lthigh around z-axis;		// frame 20
+wait-for-turn lthigh around y-axis;		// frame 20
+wait-for-turn lthigh around x-axis;		// frame 20
+wait-for-turn base around y-axis;		// frame 20
+wait-for-move base along z-axis;		//frame 20
+wait-for-move base along y-axis;		//frame 20
+}
+if(bMoving) {
+move base to y-axis [-0.47] speed [2.83];		// frame 20
+move base to z-axis [-3.89] speed [20.53];		// frame 20
+turn base to y-axis <3.32> speed <45.50>;		// frame 20
+turn lthigh to x-axis <12.73> speed <8.23>;		// frame 20
+turn lthigh to y-axis <1.23> speed <16.32>;		// frame 20
+turn lthigh to z-axis <-2.42> speed <91.11>;		// frame 20
+turn lshin to x-axis <-24.21> speed <104.72>;		// frame 20
+turn lshin to y-axis <-1.08> speed <7.23>;		// frame 20
+turn lshin to z-axis <-0.10> speed <0.38>;		// frame 20
+turn lankle to x-axis <-17.46> speed <28.75>;		// frame 20
+turn lankle to y-axis <-0.18> speed <4.07>;		// frame 20
+turn lankle to z-axis <-0.11> speed <0.60>;		// frame 20
+turn lfoot to x-axis <37.20> speed <197.22>;		// frame 20
+turn lfoot to y-axis <0.02> speed <1.72>;		// frame 20
+turn lfoot to z-axis <5.47> speed <47.44>;		// frame 20
+turn rthigh to x-axis <-27.49> speed <82.01>;		// frame 20
+turn rthigh to y-axis <1.26> speed <26.04>;		// frame 20
+turn rthigh to z-axis <13.27> speed <88.25>;		// frame 20
+turn rshin to x-axis <-2.23> speed <4.38>;		// frame 20
+turn rshin to y-axis <1.19> speed <31.29>;		// frame 20
+turn rshin to z-axis <0.70> speed <9.24>;		// frame 20
+turn rankle to x-axis <9.87> speed <123.24>;		// frame 20
+turn rankle to y-axis <-1.71> speed <23.27>;		// frame 20
+turn rankle to z-axis <-0.74> speed <8.75>;		// frame 20
+turn rfoot to x-axis <20.49> speed <188.49>;		// frame 20
+turn rfoot to y-axis <1.25> speed <2.80>;		// frame 20
+turn rfoot to z-axis <-11.20> speed <38.97>;		// frame 20
+turn torso to z-axis <4.25> speed <20.90>;		// frame 20
+wait-for-turn torso around z-axis;		// frame 21
+wait-for-turn rfoot around z-axis;		// frame 21
+wait-for-turn rfoot around y-axis;		// frame 21
+wait-for-turn rfoot around x-axis;		// frame 21
+wait-for-turn rankle around z-axis;		// frame 21
+wait-for-turn rankle around y-axis;		// frame 21
+wait-for-turn rankle around x-axis;		// frame 21
+wait-for-turn rshin around z-axis;		// frame 21
+wait-for-turn rshin around y-axis;		// frame 21
+wait-for-turn rshin around x-axis;		// frame 21
+wait-for-turn rthigh around z-axis;		// frame 21
+wait-for-turn rthigh around y-axis;		// frame 21
+wait-for-turn rthigh around x-axis;		// frame 21
+wait-for-turn lfoot around z-axis;		// frame 21
+wait-for-turn lfoot around y-axis;		// frame 21
+wait-for-turn lfoot around x-axis;		// frame 21
+wait-for-turn lankle around z-axis;		// frame 21
+wait-for-turn lankle around y-axis;		// frame 21
+wait-for-turn lankle around x-axis;		// frame 21
+wait-for-turn lshin around z-axis;		// frame 21
+wait-for-turn lshin around y-axis;		// frame 21
+wait-for-turn lshin around x-axis;		// frame 21
+wait-for-turn lthigh around z-axis;		// frame 21
+wait-for-turn lthigh around y-axis;		// frame 21
+wait-for-turn lthigh around x-axis;		// frame 21
+wait-for-turn base around y-axis;		// frame 21
+wait-for-move base along z-axis;		//frame 21
+wait-for-move base along y-axis;		//frame 21
+}
+if(bMoving) {
+move base to y-axis [-0.35] speed [2.97];		// frame 21
+move base to z-axis [-3.01] speed [21.96];		// frame 21
+turn base to y-axis <4.95> speed <40.75>;		// frame 21
+turn lthigh to x-axis <13.08> speed <8.63>;		// frame 21
+turn lthigh to y-axis <0.75> speed <12.03>;		// frame 21
+turn lthigh to z-axis <0.91> speed <83.31>;		// frame 21
+turn lshin to x-axis <-27.74> speed <88.07>;		// frame 21
+turn lshin to y-axis <-0.78> speed <7.59>;		// frame 21
+turn lshin to z-axis <-0.08> speed <0.40>;		// frame 21
+turn lankle to x-axis <-18.67> speed <30.20>;		// frame 21
+turn lankle to y-axis <-0.09> speed <2.18>;		// frame 21
+turn lankle to z-axis <-0.09> speed <0.63>;		// frame 21
+turn lfoot to x-axis <44.48> speed <182.15>;		// frame 21
+turn lfoot to y-axis <-0.04> speed <1.51>;		// frame 21
+turn lfoot to z-axis <3.78> speed <42.41>;		// frame 21
+turn rthigh to x-axis <-24.06> speed <85.83>;		// frame 21
+turn rthigh to y-axis <0.17> speed <27.35>;		// frame 21
+turn rthigh to z-axis <16.47> speed <80.10>;		// frame 21
+turn rshin to x-axis <-1.74> speed <12.22>;		// frame 21
+turn rshin to y-axis <1.84> speed <16.17>;		// frame 21
+turn rshin to z-axis <0.89> speed <4.78>;		// frame 21
+turn rankle to x-axis <12.38> speed <62.68>;		// frame 21
+turn rankle to y-axis <-2.19> speed <12.03>;		// frame 21
+turn rankle to z-axis <-0.92> speed <4.52>;		// frame 21
+turn rfoot to x-axis <13.97> speed <163.17>;		// frame 21
+turn rfoot to y-axis <1.37> speed <3.02>;		// frame 21
+turn rfoot to z-axis <-12.62> speed <35.32>;		// frame 21
+turn torso to z-axis <5.00> speed <18.69>;		// frame 21
+wait-for-turn torso around z-axis;		// frame 22
+wait-for-turn rfoot around z-axis;		// frame 22
+wait-for-turn rfoot around y-axis;		// frame 22
+wait-for-turn rfoot around x-axis;		// frame 22
+wait-for-turn rankle around z-axis;		// frame 22
+wait-for-turn rankle around y-axis;		// frame 22
+wait-for-turn rankle around x-axis;		// frame 22
+wait-for-turn rshin around z-axis;		// frame 22
+wait-for-turn rshin around y-axis;		// frame 22
+wait-for-turn rshin around x-axis;		// frame 22
+wait-for-turn rthigh around z-axis;		// frame 22
+wait-for-turn rthigh around y-axis;		// frame 22
+wait-for-turn rthigh around x-axis;		// frame 22
+wait-for-turn lfoot around z-axis;		// frame 22
+wait-for-turn lfoot around y-axis;		// frame 22
+wait-for-turn lfoot around x-axis;		// frame 22
+wait-for-turn lankle around z-axis;		// frame 22
+wait-for-turn lankle around y-axis;		// frame 22
+wait-for-turn lankle around x-axis;		// frame 22
+wait-for-turn lshin around z-axis;		// frame 22
+wait-for-turn lshin around y-axis;		// frame 22
+wait-for-turn lshin around x-axis;		// frame 22
+wait-for-turn lthigh around z-axis;		// frame 22
+wait-for-turn lthigh around y-axis;		// frame 22
+wait-for-turn lthigh around x-axis;		// frame 22
+wait-for-turn base around y-axis;		// frame 22
+wait-for-move base along z-axis;		//frame 22
+wait-for-move base along y-axis;		//frame 22
+}
+if(bMoving) {
+move base to y-axis [-0.23] speed [2.96];		// frame 22
+move base to z-axis [-2.07] speed [23.59];		// frame 22
+turn base to y-axis <6.36> speed <35.24>;		// frame 22
+turn lthigh to x-axis <13.42> speed <8.57>;		// frame 22
+turn lthigh to y-axis <0.38> speed <9.36>;		// frame 22
+turn lthigh to z-axis <3.82> speed <72.87>;		// frame 22
+turn lshin to x-axis <-30.55> speed <70.46>;		// frame 22
+turn lshin to y-axis <-0.47> speed <7.54>;		// frame 22
+turn lshin to z-axis <-0.07> speed <0.40>;		// frame 22
+turn lankle to x-axis <-19.87> speed <30.05>;		// frame 22
+turn lankle to y-axis <-0.02> speed <1.89>;		// frame 22
+turn lankle to z-axis <-0.06> speed <0.63>;		// frame 22
+turn lfoot to x-axis <50.91> speed <160.58>;		// frame 22
+turn lfoot to y-axis <-0.09> speed <1.29>;		// frame 22
+turn lfoot to z-axis <2.32> speed <36.50>;		// frame 22
+turn rthigh to x-axis <-20.65> speed <85.21>;		// frame 22
+turn rthigh to y-axis <-0.92> speed <27.21>;		// frame 22
+turn rthigh to z-axis <19.27> speed <69.79>;		// frame 22
+turn rshin to x-axis <1.07> speed <70.43>;		// frame 22
+turn rshin to y-axis <1.67> speed <4.24>;		// frame 22
+turn rshin to z-axis <0.80> speed <2.22>;		// frame 22
+turn rankle to x-axis <9.93> speed <61.37>;		// frame 22
+turn rankle to y-axis <-1.69> speed <12.69>;		// frame 22
+turn rankle to z-axis <-0.75> speed <4.19>;		// frame 22
+turn rfoot to x-axis <10.09> speed <97.01>;		// frame 22
+turn rfoot to y-axis <1.52> speed <3.85>;		// frame 22
+turn rfoot to z-axis <-13.88> speed <31.64>;		// frame 22
+turn torso to z-axis <5.64> speed <16.15>;		// frame 22
+wait-for-turn torso around z-axis;		// frame 23
+wait-for-turn rfoot around z-axis;		// frame 23
+wait-for-turn rfoot around y-axis;		// frame 23
+wait-for-turn rfoot around x-axis;		// frame 23
+wait-for-turn rankle around z-axis;		// frame 23
+wait-for-turn rankle around y-axis;		// frame 23
+wait-for-turn rankle around x-axis;		// frame 23
+wait-for-turn rshin around z-axis;		// frame 23
+wait-for-turn rshin around y-axis;		// frame 23
+wait-for-turn rshin around x-axis;		// frame 23
+wait-for-turn rthigh around z-axis;		// frame 23
+wait-for-turn rthigh around y-axis;		// frame 23
+wait-for-turn rthigh around x-axis;		// frame 23
+wait-for-turn lfoot around z-axis;		// frame 23
+wait-for-turn lfoot around y-axis;		// frame 23
+wait-for-turn lfoot around x-axis;		// frame 23
+wait-for-turn lankle around z-axis;		// frame 23
+wait-for-turn lankle around y-axis;		// frame 23
+wait-for-turn lankle around x-axis;		// frame 23
+wait-for-turn lshin around z-axis;		// frame 23
+wait-for-turn lshin around y-axis;		// frame 23
+wait-for-turn lshin around x-axis;		// frame 23
+wait-for-turn lthigh around z-axis;		// frame 23
+wait-for-turn lthigh around y-axis;		// frame 23
+wait-for-turn lthigh around x-axis;		// frame 23
+wait-for-turn base around y-axis;		// frame 23
+wait-for-move base along z-axis;		//frame 23
+wait-for-move base along y-axis;		//frame 23
+}
+if(bMoving) {
+move base to y-axis [-0.12] speed [2.81];		// frame 23
+move base to z-axis [-1.14] speed [23.12];		// frame 23
+turn base to y-axis <7.58> speed <30.34>;		// frame 23
+turn lthigh to x-axis <13.75> speed <8.12>;		// frame 23
+turn lthigh to y-axis <0.10> speed <7.00>;		// frame 23
+turn lthigh to z-axis <6.40> speed <64.39>;		// frame 23
+turn lshin to x-axis <-32.82> speed <56.55>;		// frame 23
+turn lshin to y-axis <-0.19> speed <7.15>;		// frame 23
+turn lshin to z-axis <-0.05> speed <0.38>;		// frame 23
+turn lankle to x-axis <-21.01> speed <28.51>;		// frame 23
+turn lankle to y-axis <0.04> speed <1.52>;		// frame 23
+turn lankle to z-axis <-0.04> speed <0.60>;		// frame 23
+turn lfoot to x-axis <56.66> speed <143.77>;		// frame 23
+turn lfoot to y-axis <-0.13> speed <1.10>;		// frame 23
+turn lfoot to z-axis <1.07> speed <31.31>;		// frame 23
+turn rthigh to x-axis <-17.42> speed <80.72>;		// frame 23
+turn rthigh to y-axis <-1.95> speed <25.81>;		// frame 23
+turn rthigh to z-axis <21.72> speed <61.39>;		// frame 23
+turn rshin to x-axis <5.70> speed <115.58>;		// frame 23
+turn rshin to y-axis <1.28> speed <9.65>;		// frame 23
+turn rshin to z-axis <0.60> speed <5.04>;		// frame 23
+turn rankle to x-axis <4.28> speed <141.11>;		// frame 23
+turn rankle to y-axis <-0.53> speed <28.89>;		// frame 23
+turn rankle to z-axis <-0.37> speed <9.53>;		// frame 23
+turn rfoot to x-axis <7.68> speed <60.10>;		// frame 23
+turn rfoot to y-axis <1.69> speed <4.04>;		// frame 23
+turn rfoot to z-axis <-15.00> speed <28.02>;		// frame 23
+turn torso to z-axis <6.20> speed <13.86>;		// frame 23
+wait-for-turn torso around z-axis;		// frame 24
+wait-for-turn rfoot around z-axis;		// frame 24
+wait-for-turn rfoot around y-axis;		// frame 24
+wait-for-turn rfoot around x-axis;		// frame 24
+wait-for-turn rankle around z-axis;		// frame 24
+wait-for-turn rankle around y-axis;		// frame 24
+wait-for-turn rankle around x-axis;		// frame 24
+wait-for-turn rshin around z-axis;		// frame 24
+wait-for-turn rshin around y-axis;		// frame 24
+wait-for-turn rshin around x-axis;		// frame 24
+wait-for-turn rthigh around z-axis;		// frame 24
+wait-for-turn rthigh around y-axis;		// frame 24
+wait-for-turn rthigh around x-axis;		// frame 24
+wait-for-turn lfoot around z-axis;		// frame 24
+wait-for-turn lfoot around y-axis;		// frame 24
+wait-for-turn lfoot around x-axis;		// frame 24
+wait-for-turn lankle around z-axis;		// frame 24
+wait-for-turn lankle around y-axis;		// frame 24
+wait-for-turn lankle around x-axis;		// frame 24
+wait-for-turn lshin around z-axis;		// frame 24
+wait-for-turn lshin around y-axis;		// frame 24
+wait-for-turn lshin around x-axis;		// frame 24
+wait-for-turn lthigh around z-axis;		// frame 24
+wait-for-turn lthigh around y-axis;		// frame 24
+wait-for-turn lthigh around x-axis;		// frame 24
+wait-for-turn base around y-axis;		// frame 24
+wait-for-move base along z-axis;		//frame 24
+wait-for-move base along y-axis;		//frame 24
+}
+if(bMoving) {
+move base to y-axis [-0.03] speed [2.17];		// frame 24
+move base to z-axis [-0.36] speed [19.49];		// frame 24
+turn base to y-axis <8.45> speed <21.95>;		// frame 24
+turn lthigh to x-axis <14.00> speed <6.27>;		// frame 24
+turn lthigh to y-axis <-0.03> speed <3.25>;		// frame 24
+turn lthigh to z-axis <8.31> speed <47.66>;		// frame 24
+turn lshin to x-axis <-34.30> speed <37.17>;		// frame 24
+turn lshin to y-axis <0.03> speed <5.52>;		// frame 24
+turn lshin to z-axis <-0.04> speed <0.29>;		// frame 24
+turn lankle to x-axis <-21.90> speed <22.06>;		// frame 24
+turn lankle to y-axis <0.07> speed <0.72>;		// frame 24
+turn lankle to z-axis <-0.02> speed <0.46>;		// frame 24
+turn lfoot to x-axis <61.08> speed <110.50>;		// frame 24
+turn lfoot to y-axis <-0.16> speed <0.77>;		// frame 24
+turn lfoot to z-axis <0.16> speed <22.60>;		// frame 24
+turn rthigh to x-axis <-14.90> speed <63.01>;		// frame 24
+turn rthigh to y-axis <-2.75> speed <19.96>;		// frame 24
+turn rthigh to z-axis <23.53> speed <45.24>;		// frame 24
+turn rshin to x-axis <10.01> speed <107.87>;		// frame 24
+turn rshin to y-axis <0.90> speed <9.51>;		// frame 24
+turn rshin to z-axis <0.40> speed <4.97>;		// frame 24
+turn rankle to x-axis <-1.36> speed <141.11>;		// frame 24
+turn rankle to y-axis <0.61> speed <28.49>;		// frame 24
+turn rankle to z-axis <0.01> speed <9.39>;		// frame 24
+turn rfoot to x-axis <6.32> speed <34.07>;		// frame 24
+turn rfoot to y-axis <1.81> speed <3.24>;		// frame 24
+turn rfoot to z-axis <-15.83> speed <20.58>;		// frame 24
+turn torso to z-axis <6.60> speed <9.99>;		// frame 24
+wait-for-turn torso around z-axis;		// frame 25
+wait-for-turn rfoot around z-axis;		// frame 25
+wait-for-turn rfoot around y-axis;		// frame 25
+wait-for-turn rfoot around x-axis;		// frame 25
+wait-for-turn rankle around z-axis;		// frame 25
+wait-for-turn rankle around y-axis;		// frame 25
+wait-for-turn rankle around x-axis;		// frame 25
+wait-for-turn rshin around z-axis;		// frame 25
+wait-for-turn rshin around y-axis;		// frame 25
+wait-for-turn rshin around x-axis;		// frame 25
+wait-for-turn rthigh around z-axis;		// frame 25
+wait-for-turn rthigh around y-axis;		// frame 25
+wait-for-turn rthigh around x-axis;		// frame 25
+wait-for-turn lfoot around z-axis;		// frame 25
+wait-for-turn lfoot around y-axis;		// frame 25
+wait-for-turn lfoot around x-axis;		// frame 25
+wait-for-turn lankle around z-axis;		// frame 25
+wait-for-turn lankle around y-axis;		// frame 25
+wait-for-turn lankle around x-axis;		// frame 25
+wait-for-turn lshin around z-axis;		// frame 25
+wait-for-turn lshin around y-axis;		// frame 25
+wait-for-turn lshin around x-axis;		// frame 25
+wait-for-turn lthigh around z-axis;		// frame 25
+wait-for-turn lthigh around y-axis;		// frame 25
+wait-for-turn lthigh around x-axis;		// frame 25
+wait-for-turn base around y-axis;		// frame 25
+wait-for-move base along z-axis;		//frame 25
+wait-for-move base along y-axis;		//frame 25
+
+}
+sleep 10;
+}
+}
+
+Create() {
+	bMoving = 0;
+	start-script Walk();
+}
+
+Killed(s,c) {
+	c = 3;
+	return 0;
+}

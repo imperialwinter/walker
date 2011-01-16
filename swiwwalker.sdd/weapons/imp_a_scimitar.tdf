@@ -1,0 +1,50 @@
+[imp_a_scimitar]
+{
+	name=Heavy Plasma Bombs;
+	rendertype=4;
+	interceptedbyshieldtype=2;
+	explosiongenerator=custom:IMP_TIE_BOMB_FX;
+	explosionspeed=65536;
+
+	dropped=1;
+	firestarter=50;
+
+	range=1280;
+	reloadtime=.2;
+	energypershot=50;
+	areaofeffect=200;
+
+	soundstart=bombrel;
+	soundstartvolume=15;
+	soundhit=XPLOMED2;
+	soundhitvolume=15;
+
+	avoidfriendly=0;
+	collidefriendly=0;
+	avoidfeature=0;
+	noselfdamage=1;
+
+	sizedecay=0.1;
+	alphadecay=0.25;
+	stages=15;
+
+	size=2;
+	collisionsize=8;
+	impulsefactor=0;
+	impulseboost=0;
+	cratermult=0;
+	craterboost=0;
+
+	texture1=PlasmaBall;
+
+	[damage]
+	{
+		default=500;
+		no_armor=500;
+		light_armor=300;
+		medium_armor=150;
+		heavy_armor=100;
+		ion_damage=500;
+		flag=0.000001;
+	}
+}

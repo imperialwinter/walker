@@ -1,0 +1,245 @@
+#define TAK
+
+#include "general/standard_commands.h"
+
+piece body, pelvis, detail_gun, r_shock, r_thigh, r_leg, r_foot, l_shock, l_thigh, l_leg, l_foot, turret, gunsleeves, gun_barrel_r, gun_barrel_l, firepoint1, firepoint2;
+
+
+static-var  bMoving, gun_1;
+
+#define SMOKEPIECE1 body
+#define SMOKEPIECE2 r_thigh
+#define SMOKEPIECE3 l_thigh
+#define SMOKEPIECE4 turret
+#include "general/smokeunit_sws.h"
+
+#define MED_MUZZLE_FLASH_FX_RED 1024+1
+#define MECH_STOMP_FX 1024+2
+
+#define RUN_SPEED 3.55
+
+
+		
+			//turn turret to y-axis <0> speed <5>*SpeedMult1;
+#define FRAME1\
+			move body to y-axis [3] speed [2]*moveMult;\
+			turn body to z-axis <0> speed <5>*SpeedMult1;\
+			turn turret to z-axis <0> speed <5>*SpeedMult1;\
+			\
+			turn l_shock to x-axis <-10> speed <10>*SpeedMult1;\
+			turn l_shock to z-axis <0> speed <5>*SpeedMult1;\
+			turn l_thigh to x-axis <10> speed <10>*SpeedMult1;\
+			turn l_leg to x-axis <20> speed <10>*SpeedMult1;\
+			turn l_foot to x-axis <-20> speed <10>*SpeedMult2;\
+			\
+			turn r_shock to x-axis <0> speed <10>*SpeedMult2;\
+			turn r_shock to z-axis <0> speed <5>*SpeedMult1;\
+			turn r_thigh to x-axis <10> speed <10>*SpeedMult2;\
+			turn r_leg to x-axis <-45> speed <10>*SpeedMult2;\
+			turn r_foot to x-axis <70> speed <10>*SpeedMult3;
+			
+			//turn turret to y-axis <3> speed <5>*SpeedMult1;
+#define FRAME2\
+			move body to y-axis [0] speed [15]*moveMult;\
+			turn body to z-axis <-5> speed <5>*SpeedMult1;\
+			turn turret to z-axis <7> speed <5>*SpeedMult1;\
+			\
+			turn l_shock to x-axis <20> speed <10>*SpeedMult1;\
+			turn l_shock to z-axis <5> speed <5>*SpeedMult1;\
+			turn l_thigh to x-axis <20> speed <10>*SpeedMult1;\
+			turn l_leg to x-axis <-40> speed <10>*SpeedMult1;\
+			turn l_foot to x-axis <30> speed <10>*SpeedMult2;\
+			\
+			turn r_shock to x-axis <-20> speed <10>*SpeedMult1;\
+			turn r_shock to z-axis <5> speed <5>*SpeedMult1;\
+			turn r_thigh to x-axis <0> speed <10>*SpeedMult2;\
+			turn r_leg to x-axis <0> speed <10>*SpeedMult2;\
+			turn r_foot to x-axis <20> speed <10>*SpeedMult2;
+			
+			//turn turret to y-axis <0> speed <5>*SpeedMult1;
+#define FRAME3\
+			move body to y-axis [3] speed [2]*moveMult;\
+			turn body to z-axis <0> speed <5>*SpeedMult1;\
+			turn turret to z-axis <0> speed <5>*SpeedMult1;\
+			\
+			turn l_shock to x-axis <0> speed <10>*SpeedMult1;\
+			turn l_shock to z-axis <0> speed <5>*SpeedMult1;\
+			turn l_thigh to x-axis <10> speed <10>*SpeedMult2;\
+			turn l_leg to x-axis <-45> speed <10>*SpeedMult2;\
+			turn l_foot to x-axis <70> speed <10>*SpeedMult3;\
+			\
+			turn r_shock to x-axis <-10> speed <10>*SpeedMult1;\
+			turn r_shock to z-axis <0> speed <5>*SpeedMult1;\
+			turn r_thigh to x-axis <10> speed <10>*SpeedMult1;\
+			turn r_leg to x-axis <20> speed <10>*SpeedMult1;\
+			turn r_foot to x-axis <-20> speed <10>*SpeedMult2;	
+			
+			//turn turret to y-axis <-3> speed <5>*SpeedMult1;
+#define FRAME4 \
+			move body to y-axis [0] speed [15]*moveMult;\
+			turn body to z-axis <5> speed <5>*SpeedMult1;\
+			turn turret to z-axis <-7> speed <5>*SpeedMult1;\
+			\
+			turn l_shock to x-axis <-20> speed <10>*SpeedMult1;\
+			turn l_shock to z-axis <-5> speed <5>*SpeedMult1;\
+			turn l_thigh to x-axis <0> speed <10>*SpeedMult2;\
+			turn l_leg to x-axis <0> speed <10>*SpeedMult2;\
+			turn l_foot to x-axis <20> speed <10>*SpeedMult2;\
+			\
+			turn r_shock to x-axis <20> speed <10>*SpeedMult1;\
+			turn r_shock to z-axis <-5> speed <5>*SpeedMult1;\
+			turn r_thigh to x-axis <20> speed <10>*SpeedMult1;\
+			turn r_leg to x-axis <-40> speed <10>*SpeedMult1;\
+			turn r_foot to x-axis <30> speed <10>*SpeedMult2;
+				
+StartMoving()
+{
+	bMoving = 1;
+}
+
+StopMoving()
+{
+	bMoving = 0;
+}
+
+Walk()
+{
+var moveMult;
+var SpeedMult1;
+var SpeedMult2;
+var SpeedMult3;
+//8,16,32, sleep 225 - to adjust the overall pace of the animation, keep this ratio between the speed mults and the sleep.
+//for example, 4, 8, 16 and 450 would be half speed of the above (halved the speed mults, doubled the sleep)
+SpeedMult1 = 5;
+SpeedMult2 = 10;
+SpeedMult3 = 20;
+
+moveMult = 1;
+
+var desync;
+desync = rand(350, 370); //360 is ideal
+	while (1)
+	{
+		if (bMoving==1)
+			{
+			FRAME1			
+			sleep desync;
+			}
+		if (bMoving==1)
+			{
+			FRAME2
+			sleep desync;
+			}
+			
+		if (bMoving==1)
+			{
+			FRAME3
+			sleep desync;
+			}
+			
+		if (bMoving==1)
+			{
+			FRAME4
+			sleep desync;
+			}
+			
+		if (bMoving==0)
+			{
+			move body to y-axis [0] speed [100];
+			turn body to z-axis <0> speed <10>*SpeedMult1;
+		//	turn turret to y-axis <0> speed <10>*SpeedMult1;
+			turn turret to z-axis <0> speed <10>*SpeedMult1;
+			
+			turn l_shock to x-axis <0> speed <10>*SpeedMult1;
+			turn l_shock to z-axis <0> speed <10>*SpeedMult1;
+			turn l_thigh to x-axis <0> speed <10>*SpeedMult1;
+			turn l_leg to x-axis <0> speed <10>*SpeedMult1;
+			turn l_foot to x-axis <0> speed <10>*SpeedMult1;
+				
+			turn r_shock to x-axis <0> speed <10>*SpeedMult1;
+			turn r_shock to z-axis <0> speed <10>*SpeedMult1;
+			turn r_thigh to x-axis <0> speed <10>*SpeedMult1;
+			turn r_leg to x-axis <0> speed <10>*SpeedMult1;
+			turn r_foot to x-axis <0> speed <10>*SpeedMult1;
+			sleep desync;
+			}
+		//if (bMoving ==0) sleep 100;
+		}
+}
+
+Create()
+{
+	hide firepoint1;
+	hide firepoint2;
+	bMoving = 0;
+	start-script Walk();
+	gun_1 = 0;
+}
+
+RestoreAfterDelay()
+{
+	sleep 5000;
+	turn turret to y-axis <0> speed <100>;
+	turn gunsleeves to x-axis <0> speed <100>;
+}
+
+AimFromWeapon1(piecenum)
+{
+	piecenum = turret;
+}
+
+QueryWeapon1(piecenum)
+{
+	if( gun_1 == 0 )
+	{
+		piecenum=firepoint1;
+	}
+	if( gun_1 == 1 )
+	{
+		piecenum=firepoint2;
+	}
+}
+
+FireWeapon1()
+{
+
+	if( gun_1 == 0 )
+	{
+		move gun_barrel_r to z-axis [-2] speed [100];
+		emit-sfx MED_MUZZLE_FLASH_FX_RED from firepoint1;
+		wait-for-move gun_barrel_r along z-axis;
+		move gun_barrel_r to z-axis [0] speed [20];
+	}
+	if( gun_1 == 1 )
+	{
+		move gun_barrel_l to z-axis [-2] speed [100];
+		emit-sfx MED_MUZZLE_FLASH_FX_RED from firepoint2;
+		wait-for-move gun_barrel_l along z-axis;
+		move gun_barrel_l to z-axis [0] speed [20];
+	}
+	gun_1 = !gun_1;
+}
+
+AimWeapon1(heading, pitch)
+{
+	signal SIG_AIM1;
+	set-signal-mask SIG_AIM1;
+	turn turret to y-axis heading speed <150.0>;
+	turn gunsleeves to x-axis 0 - pitch speed <150>;
+	wait-for-turn turret around y-axis;
+	wait-for-turn gunsleeves around x-axis;
+	start-script RestoreAfterDelay();
+	return (1);
+}
+
+Killed(severity, corpsetype)
+{
+	explode detail_gun type FALL | SMOKE | FIRE;
+	explode l_thigh type FALL | SMOKE | FIRE;
+	explode r_thigh type FALL | SMOKE | FIRE;
+	explode l_leg type FALL | SMOKE | FIRE;
+	explode r_leg type FALL | SMOKE | FIRE;
+	explode l_foot type FALL | SMOKE | FIRE;
+	explode r_foot type FALL | SMOKE | FIRE;
+	return(0);
+}

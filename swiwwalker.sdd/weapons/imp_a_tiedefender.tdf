@@ -1,0 +1,38 @@
+[imp_a_tiedefendermissile]
+{
+	name=Advanced Conc. Missile;
+	model=weapons/w_conc.s3o;
+	rendertype=1;
+	tolerance=6000;
+
+	lineofsight=1;
+	selfprop=1;
+	firestarter=70;
+
+	range=500;
+	reloadtime=7;
+	metalpershot=0;
+	startvelocity=550;
+	weaponacceleration=101;
+	weaponvelocity=750;
+	guidance=1;
+	tracks=1;
+	areaofeffect=40;
+	weapontimer=7;
+	smoketrail=1;
+	turnrate=51000;
+
+	soundstart=concmissile;
+	soundhit=XPLOSML2;
+
+	[damage]
+	{
+		default=280;
+		no_armor=280;
+		light_armor=280;
+		medium_armor=280;
+		heavy_armor=280;
+		ion_damage=280;
+		flag=0.000001;
+	}
+}

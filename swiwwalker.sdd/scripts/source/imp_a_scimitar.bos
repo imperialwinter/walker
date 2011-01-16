@@ -1,0 +1,93 @@
+#define TAK
+
+#include "general/standard_commands.h"
+
+piece  base, cockpit, guns, flare1, flare2, lwing, rwing;
+
+static-var  gun_2;
+
+#define SMOKEPIECE1 base
+#define SMOKEPIECE2 base
+#define SMOKEPIECE3 base
+#define SMOKEPIECE4 base
+#include "general/smokeunit_sws.h"
+
+#define MED_MUZZLE_FLASH_FX_GREEN 1024+1
+
+Create() {
+	hide flare1;
+	hide flare2;
+	gun_2 = 0;
+	start-script SmokeUnit_SWS();
+}
+
+QueryWeapon1(piecenum) {
+	piecenum = base;
+}
+
+QueryWeapon2(piecenum) {
+	if(!gun_2) {
+		piecenum = flare1;
+	}
+	if(gun_2) {
+		piecenum = flare2;
+	}
+}
+
+AimWeapon2(heading, pitch) {
+	turn flare1 to y-axis heading now;
+	turn flare2 to y-axis heading now;
+	turn flare1 to x-axis pitch now;
+	turn flare2 to x-axis pitch now;
+	return 1;
+}
+
+FireWeapon2() {
+	if(!gun_2) {
+		emit-sfx MED_MUZZLE_FLASH_FX_GREEN from flare1;
+		sleep 150;
+	}
+	if(gun_2) {
+		emit-sfx MED_MUZZLE_FLASH_FX_GREEN from flare2;
+		sleep 150;
+	}
+	gun_2 = !gun_2;
+}
+
+Killed(severity, corpsetype) {
+	hide flare1;
+	hide flare2;
+	if(severity <= 25) {
+		corpsetype = 1;
+		explode base type BITMAPONLY | BITMAP;
+		explode lwing type FALL | EXPLODE_ON_HIT | BITMAP;
+		explode rwing type FALL | EXPLODE_ON_HIT | BITMAP;
+		explode cockpit type FALL | EXPLODE_ON_HIT | BITMAP;
+		explode guns type FALL | EXPLODE_ON_HIT | BITMAP;
+		return 0;
+	}
+	if(severity <= 50) {
+		corpsetype = 2;
+		explode base type BITMAPONLY | BITMAP;
+		explode lwing type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP;
+		explode rwing type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP;
+		explode cockpit type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP;
+		explode guns type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP;
+		return 0;
+	}
+	if(severity <= 99) {
+		corpsetype = 3;
+		explode base type BITMAPONLY | BITMAP;
+		explode lwing type BITMAPONLY | BITMAP;
+		explode rwing type BITMAPONLY | BITMAP;
+		explode cockpit type BITMAPONLY | BITMAP;
+		explode guns type BITMAPONLY | BITMAP;
+		return 0;
+	}
+	corpsetype = 3;
+	explode base type BITMAPONLY | BITMAP;
+	explode lwing type BITMAPONLY | BITMAP;
+	explode rwing type BITMAPONLY | BITMAP;
+	explode cockpit type BITMAPONLY | BITMAP;
+	explode guns type BITMAPONLY | BITMAP;
+}

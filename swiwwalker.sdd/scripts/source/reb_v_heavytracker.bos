@@ -1,0 +1,101 @@
+#define TAK
+
+#include "general/standard_commands.h"
+
+piece  base, rear, lpont1, lpont2, lpipes, rpont1, rpont2, rpipes, flare, wake1, wake2, wake3, wake4;
+
+static-var  wake;
+
+#define SIG_MOVE			16
+
+#define SMOKEPIECE1 base
+#define SMOKEPIECE2 rear
+#define SMOKEPIECE3 lpont2
+#define SMOKEPIECE4 rpont1
+#include "general/smokeunit_sws.h"
+
+#define LARGE_MUZZLE_FLASH_FX_RED 1024+1
+
+StartMoving() {
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
+	while(1) {
+		if(wake <= 3) {
+			emit-sfx 5 from wake1;
+			emit-sfx 5 from wake2;
+			emit-sfx 5 from wake3;
+			emit-sfx 5 from wake4;
+			emit-sfx 3 from wake1;
+			emit-sfx 3 from wake2;
+			emit-sfx 3 from wake3;
+			emit-sfx 3 from wake4;
+		}
+		sleep 300;
+	}
+}
+
+StopMoving() {
+	sleep 100;
+}
+
+setSFXoccupy(crap) {
+	wake = crap;
+	if(wake > 2) {
+		set UPRIGHT to 0;
+	}
+	if(wake < 3) {
+		set UPRIGHT to 1;
+	}
+}
+
+Create() {
+	hide flare;
+	start-script SmokeUnit_SWS();
+}
+
+QueryWeapon1(piecenum) {
+	piecenum = flare;
+}
+
+AimFromWeapon1(piecenum) {
+	piecenum = rear;
+}
+
+AimWeapon1(heading, pitch) {
+	signal SIG_AIM1;
+	set-signal-mask SIG_AIM1;
+	return 1;
+}
+
+FireWeapon1() {
+	emit-sfx LARGE_MUZZLE_FLASH_FX_RED from flare;
+}
+
+Killed(severity, corpsetype) {
+	hide flare;
+	if(severity <= 25) {
+		corpsetype = 1;
+		explode base type BITMAPONLY | BITMAP;
+		explode rpont1 type BITMAPONLY | BITMAP;
+		explode lpont2 type BITMAPONLY | BITMAP;
+		return 0;
+	}
+	if(severity <= 50) {
+		corpsetype = 2;
+		explode rear type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP;
+		explode lpont1 type BITMAPONLY | BITMAP;
+		explode base type BITMAPONLY | BITMAP;
+		return 0;
+	}
+	if(severity <= 99) {
+		corpsetype = 3;
+		explode rpont2 type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP;
+		explode rear type FALL | SMOKE | EXPLODE_ON_HIT | BITMAP;
+		explode base type BITMAPONLY | BITMAP;
+		return 0;
+	}
+	corpsetype = 3;
+	explode lpont2 type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP;
+	explode rear type FALL | SMOKE | FIRE | EXPLODE_ON_HIT | BITMAP;
+	explode base type BITMAPONLY | BITMAP;
+}

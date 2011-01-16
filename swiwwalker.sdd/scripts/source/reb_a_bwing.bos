@@ -1,0 +1,185 @@
+#define TAK
+
+#include "general/standard_commands.h"
+
+piece  cockpit, body, lwing, lgun, lflare, rwing, rgun, rflare, rturretgun, rtflare, lturretgun, ltflare, firept1, firept2, e1, e2, e3, e4;
+
+static-var  gun_1, gun_2, gun_3, bMoving;
+
+#define SMOKEPIECE1 body
+#define SMOKEPIECE2 body
+#define SMOKEPIECE3 body
+#define SMOKEPIECE4 body
+#include "general/smokeunit_sws.h"
+
+#define MED_MUZZLE_FLASH_FX_RED 1024+1
+#define LARGE_MUZZLE_FLASH_FX_BLUE 1024+2
+#define exhaustfx 1024+3
+
+Exhaust() {
+	while(1) {
+		if(bMoving) {
+			emit-sfx exhaustfx from e1;
+			emit-sfx exhaustfx from e2;
+			emit-sfx exhaustfx from e3;
+			emit-sfx exhaustfx from e4;
+		}		
+		sleep 20;
+	}
+}
+
+StartMoving() {
+	bMoving=1;
+	turn body to z-axis <0> speed <30>;
+	turn lwing to z-axis <0> speed <30>;
+	turn rwing to z-axis <0> speed <30>;
+	turn cockpit to z-axis <0> speed <30>;
+}
+
+StopMoving() {
+	bMoving=0;
+	turn body to z-axis <90> speed <30>;
+	turn rwing to z-axis <-90> speed <30>;
+	turn lwing to z-axis <90> speed <30>;
+	turn cockpit to z-axis <-90> speed <30>;
+}
+
+
+Create() {
+	hide lflare;
+	hide rflare;
+	hide ltflare;
+	hide rtflare;
+	gun_1 = 0;
+	gun_2 = 0;
+	gun_3 = 0;
+	bMoving = 0;
+	turn body to z-axis <90> now;
+	turn rwing to z-axis <-90> now;
+	turn lwing to z-axis <90> now;
+	turn cockpit to z-axis <-90> now;
+	start-script SmokeUnit_SWS();
+	start-script Exhaust();
+}
+
+QueryWeapon1(piecenum) {
+	if(!gun_1) {
+		piecenum = rtflare; }
+	if(gun_1) {
+		piecenum = ltflare; }
+}
+
+AimWeapon1(heading, pitch) {
+	signal SIG_AIM1;
+	set-signal-mask SIG_AIM1;
+	turn rtflare to y-axis heading now;
+	turn rtflare to x-axis pitch now;
+	turn ltflare to y-axis heading now;
+	turn ltflare to x-axis pitch now;
+	return 1;
+}
+
+FireWeapon1() {
+	if(!gun_1) {
+		emit-sfx LARGE_MUZZLE_FLASH_FX_BLUE from ltflare;
+		move rturretgun to z-axis [-3] now;
+		sleep 100;
+		move rturretgun to z-axis [0] speed [300];
+	}
+	if(gun_1) {
+		emit-sfx LARGE_MUZZLE_FLASH_FX_BLUE from rtflare;
+		move lturretgun to z-axis [-3] now;
+		sleep 100;
+		move lturretgun to z-axis [0] speed [300];
+	}
+	gun_1 = !gun_1;
+}
+
+AimFromWeapon1(piecenum) {
+	piecenum = cockpit;
+}
+
+QueryWeapon2(piecenum) {
+	if(!gun_2) {
+		piecenum = lflare; }
+	if(gun_2) {
+		piecenum = rflare; }
+}
+
+AimWeapon2(heading, pitch) {
+	signal SIG_AIM2;
+	set-signal-mask SIG_AIM2;
+	turn lflare to y-axis heading now;
+	turn rflare to y-axis heading now;
+	turn lflare to x-axis pitch now;
+	turn rflare to x-axis pitch now;
+	return 1;
+}
+
+FireWeapon2() {
+	if(!gun_2) {
+		emit-sfx MED_MUZZLE_FLASH_FX_RED from lflare;
+		move lgun to z-axis [-3] now;
+		sleep 150;
+		move lgun to z-axis [0] speed [300];
+	}
+	if(gun_2) {
+		emit-sfx MED_MUZZLE_FLASH_FX_RED from rflare;
+		move rgun to z-axis [-3] now;
+		sleep 150;
+		move rgun to z-axis [0] speed [300];
+	}
+	gun_2 = !gun_2;
+}
+
+AimFromWeapon2(piecenum) {
+	piecenum = body;
+}
+
+QueryWeapon3(piecenum) {
+	if(!gun_3)	{
+		piecenum = firept1; }
+	if(gun_3) {
+		piecenum = firept2; }
+}
+
+FireWeapon3() {
+	if(!gun_3) {
+		sleep 150;
+	}
+	if(gun_3) {
+		sleep 150;
+	}
+	gun_3 = !gun_3;
+}
+
+AimFromWeapon3(piecenum) {
+	piecenum = body;
+}
+
+Killed(severity, corpsetype) {
+	if(severity <= 25) {
+		corpsetype = 1;
+		explode body type BITMAPONLY | BITMAP;
+		return 0;
+	}
+	if(severity <= 50) {
+		corpsetype = 2;
+		explode body type BITMAPONLY | BITMAP;
+		explode cockpit type BITMAPONLY | BITMAP;
+		return 0;
+	}
+	if(severity <= 99) {
+		corpsetype = 3;
+		explode body type BITMAPONLY | BITMAP;
+		explode cockpit type BITMAPONLY | BITMAP;
+		explode lwing type FALL | SMOKE | BITMAP;
+		explode rwing type FALL | SMOKE | BITMAP;
+		return 0;
+	}
+	corpsetype = 3;
+	explode body type BITMAPONLY | BITMAP;
+	explode cockpit type BITMAPONLY | BITMAP;
+	explode lwing type FALL | SMOKE | BITMAP;
+	explode rwing type FALL | SMOKE | BITMAP;
+}

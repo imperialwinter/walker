@@ -1,0 +1,52 @@
+[unitinfo]
+{
+	unitname=reb_b_heavyweaponslab;
+	objectname=rebel/b-heavyweaponslab.s3o;
+	buildpic=reb-b-heavyweaponslab.png;
+	corpse=reb_b_heavyweaponslab_dead;
+	icontype=factory_hv;
+	soundcategory=TANKPLANT;
+	category=GROUND;
+	tedclass=PLANT;
+	yardmap=oooooooo oooooooo oooooooo oooooooo ooccccoo ooccccoo ooccccoo ooccccoo;
+
+	name=Heavy Weapons Lab;
+	description=Produces Advanced Tanks;
+	maxdamage=2580;
+	idleautoheal=0;
+	buildcostmetal=1125;
+	buildcostenergy=3175;
+	buildtime=9325;
+	footprintx=8;
+	footprintz=8;
+
+	shownanoframe=0;
+	levelground=0;
+
+	metalstorage=100;
+	energystorage=100;
+
+	sightdistance=400;
+
+	builder=1;
+	workertime=90;
+
+	canmove=1;
+	maxslope=10;
+	maxwaterdepth=5;
+
+	UseBuildingGroundDecal=1;
+	BuildingGroundDecalType=decals/reb-b-heavyweaponslab.dds;
+	BuildingGroundDecalDecaySpeed=1;
+	BuildingGroundDecalSizeX=18;
+	BuildingGroundDecalSizeY=18;
+
+	selfdestructcountdown=1;
+	explodeas=LARGE_BUILDING;
+	selfdestructas=LARGE_BUILDING;
+
+	[sfxtypes]
+	{
+		explosiongenerator0=custom:SMOKEPUFF_SWS_FX;
+	}
+}

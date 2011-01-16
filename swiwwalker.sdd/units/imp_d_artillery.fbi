@@ -1,0 +1,58 @@
+[unitinfo]
+{
+	unitname=imp_d_artillery;
+	objectname=empire/d-artillery.s3o;
+	buildpic=imp_d_artillery.png;
+	corpse=imp_d_turbolaser_dead;
+	icontype=defense_heavy;
+	soundcategory=GUARD;
+	category=GROUND DEFENSE BUILDING;
+	yardmap=oooooo;
+
+	name=Artillery Platform;
+	description=Artillery Platform;
+	side=Empire;
+	maxdamage=2500;
+	idleautoheal=0;
+	buildcostmetal=2000;
+	buildcostenergy=10700;
+	buildtime=68;
+	footprintx=5;
+	footprintz=6;
+	cobid=43;
+
+	reclaimable=0;
+	shownanoframe=0;
+	levelground=0;
+
+	energyuse=50;
+
+	sightdistance=550;
+
+	//onoffable=1;
+	activatewhenbuilt=1;
+
+	maxslope=15;
+
+	UseBuildingGroundDecal=1;
+	BuildingGroundDecalType=decals/generic-imp.dds;
+	BuildingGroundDecalDecaySpeed=1;
+	BuildingGroundDecalSizeX=14;
+	BuildingGroundDecalSizeY=14;
+
+	selfdestructcountdown=1;
+	explodeas=MEDIUM_BUILDING;
+	selfdestructas=MEDIUM_BUILDING;
+
+	weapon1=imp_artillery;
+	onlytargetcategory1=GROUND;
+	[sfxtypes]
+	{
+		explosiongenerator0=custom:SMOKEPUFF_SWS_FX;
+		explosiongenerator1=custom:LARGE_MUZZLE_FLASH_FX_BLUE;
+	}
+	[customparams]
+	{
+		canareaattack=1;
+	}
+}

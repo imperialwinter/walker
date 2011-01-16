@@ -1,0 +1,53 @@
+[unitinfo]
+{
+	unitname=reb_v_heavytracker;
+	objectname=rebel/v-heavytracker.s3o;
+	buildpic=reb_v_heavytracker.png;
+	corpse=reb_v_heavytracker_dead;
+	icontype=vehicle_hv;
+	soundcategory=REBHOVER;
+	category=IONTARGETABLE GROUND TANK;
+
+	name=Heavy Tracker;
+	description=Long-Range Hover Tank;
+	maxdamage=1720;
+	idleautoheal=0;
+	buildcostmetal=1047;
+	buildcostenergy=9947;
+	buildtime=12500;
+	footprintx=4;
+	footprintz=4;
+	mass=500;
+
+	shownanoframe=0;
+	levelground=0;
+
+	energymake=2;
+	energyuse=6;
+
+	sightdistance=400;
+
+	canmove=1;
+	movementclass=TANKHOVER2;
+	maxvelocity=1.65;
+	acceleration=0.039;
+	brakerate=0.055;
+	turnrate=225;
+	maxslope=16;
+
+	canhover=1;
+
+	selfdestructcountdown=1;
+	explodeas=LARGE_UNIT;
+	selfdestructas=LARGE_UNIT;
+
+	weapon1=reb_v_heavytracker;
+	onlytargetcategory1=GROUND;
+	weaponmaindir1=0 0 1;
+	maxangledif1=20;
+	[sfxtypes]
+	{
+		explosiongenerator0=custom:SMOKEPUFF_SWS_FX;
+		explosiongenerator1=custom:LARGE_MUZZLE_FLASH_FX_RED;
+	}
+}

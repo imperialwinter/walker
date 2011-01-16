@@ -1,0 +1,61 @@
+[unitinfo]
+{
+	unitname=imp_w_atxt;
+	objectname=empire/w-atxt.s3o;
+	buildpic=imp_w_atxt.png;
+	corpse=imp_w_atrt_dead;
+	icontype=vehicle_lt;
+	soundcategory=CORE_TANK;
+	category=IONTARGETABLE GROUND WALKER;
+	tedclass=WALKER;
+
+	name=AT-XT;
+	description=Mortar Walker;
+	side=Empire;
+	maxdamage=1200;
+	idleautoheal=0;
+	buildcostmetal=300;
+	buildcostenergy=2700;
+	buildtime=33;
+	footprintx=3;
+	footprintz=3;
+	mass=150;
+	cobid=50;
+
+	upright=1;
+	shownanoframe=0;
+	smoothanim=0;
+
+	energymake=1;
+	energyuse=1;
+
+	sightdistance=500;
+	seismicsignature=1;
+
+	canmove=1;
+	movementclass=Walker2x2;
+	maxvelocity=1.5;
+	acceleration=1;
+	brakerate=2.5;
+	turnrate=500;
+	maxslope=35;
+	maxwaterdepth=12;
+
+	selfdestructcountdown=1;
+	explodeas=SMALL_UNIT;
+	selfdestructas=SMALL_UNIT;
+
+	nochasecategory=VTOL;
+
+	hightrajectory=1;
+
+	weapon1=imp_w_atxt;
+	onlytargetcategory1=GROUND;
+	weaponmaindir1=0 0 1;
+	maxangledif1=120;
+	[sfxtypes]
+	{
+		explosiongenerator0=custom:SMOKEPUFF_SWS_FX;
+		explosiongenerator1=custom:MED_MUZZLE_FLASH_FX_RED;
+	}
+}

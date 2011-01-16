@@ -1,0 +1,291 @@
+#define TAK
+
+#include "general/standard_commands.h"
+
+piece  base, pelvis, torso, turret, s1, b1, fpt1, s2, b2, fpt2,
+	thigh_recoil, lthigh, lleg_recoil, lleg, lcalf, lfoot, rthigh, rleg_recoil, rleg, rcalf, rfoot;
+
+static-var  bMoving, gun_1;
+
+#define SIG_MOVE			2
+
+#define SMOKEPIECE1 base
+#define SMOKEPIECE2 lthigh
+#define SMOKEPIECE3 base
+#define SMOKEPIECE4 rthigh
+#include "general/smokeunit_sws.h"
+
+#define MED_MUZZLE_FLASH_FX_RED 1024+1
+
+Walk() {
+	sleep rand(10,60); //desync the animations relative to each other
+	while(1) {
+		if(!bMoving) {
+			turn pelvis to x-axis <0> speed <70>;
+			turn pelvis to y-axis <0> speed <80>;
+			turn pelvis to z-axis <0> speed <80>;
+			turn lthigh to x-axis <0> speed <70>;
+			turn lthigh to y-axis <0> speed <70>;
+			turn lthigh to z-axis <0> speed <70>;
+			turn lleg to x-axis <0> speed <70>;
+			turn lcalf to x-axis <0> speed <70>;
+			turn lfoot to x-axis <0> speed <70>;
+			turn rthigh to x-axis <0> speed <70>;
+			turn rthigh to y-axis <0> speed <70>;
+			turn rthigh to z-axis <0> speed <70>;
+			turn rleg to x-axis <0> speed <70>;
+			turn rcalf to x-axis <0> speed <70>;
+			turn rfoot to x-axis <0> speed <140>;
+			sleep 50;
+		}
+
+
+		if(bMoving) {
+			turn pelvis to x-axis <10> speed <70>;
+		}
+
+		if(bMoving) {
+			wait-for-turn lthigh around x-axis;
+			
+			turn rthigh to x-axis <20> speed <100>;
+			turn rleg to x-axis <-40> speed <200>;
+			turn rcalf to x-axis <0> speed <300>;
+			turn rfoot to x-axis <0> speed <300>;
+			
+			
+			turn lthigh to x-axis <-55> speed <140>;
+		}
+		if(bMoving) {
+		//	wait-for-turn rthigh around x-axis;
+			turn rthigh to x-axis <-80> speed <240>;
+			turn rleg to x-axis <15> speed <100>;
+			turn rfoot to x-axis <35> speed <200>;
+			
+			
+			
+			turn lthigh to x-axis <-25> speed <80>;
+			turn lleg to x-axis <0> speed <60>;
+			turn lfoot to x-axis <25> speed <60>;
+			
+			
+			
+			turn pelvis to z-axis <-6> speed <15>;
+			turn rthigh to z-axis <6> speed <20>;
+			turn rthigh to z-axis <12> speed <30>;
+			turn lthigh to y-axis <-6> speed <20>;
+			turn lthigh to z-axis <0> speed <20>;
+		}
+		if(bMoving) {
+			wait-for-turn rthigh around x-axis;
+			turn rthigh to x-axis <-55> speed <140>;
+			
+			
+			turn lthigh to x-axis <0> speed <80>;
+			turn lfoot to x-axis <0> speed <80>;
+		}
+		if(bMoving) {
+			wait-for-turn rthigh around x-axis;
+			wait-for-turn rleg around x-axis;
+			turn rthigh to x-axis <-25> speed <80>;
+			turn rleg to x-axis <0> speed <60>;
+			turn rfoot to x-axis <25> speed <60>;
+			
+			
+			
+			
+			turn lthigh to x-axis <10> speed <80>;
+			turn lleg to x-axis <20> speed <160>;
+			turn lcalf to x-axis <-10> speed <80>;
+		}
+		if(bMoving) {
+			wait-for-turn rthigh around x-axis;
+			wait-for-turn rfoot around x-axis;
+			turn rthigh to x-axis <0> speed <80>;
+			turn rfoot to x-axis <0> speed <80>;
+			
+			
+			
+			turn lthigh to x-axis <20> speed <100>;
+			turn lleg to x-axis <-40> speed <200>;
+			turn lcalf to x-axis <0> speed <300>;
+			turn lfoot to x-axis <0> speed <300>;
+			
+			
+			
+			turn pelvis to z-axis <6> speed <15>;
+			turn rthigh to y-axis <-6> speed <20>;
+			turn rthigh to z-axis <0> speed <20>;
+			turn lthigh to y-axis <-6> speed <20>;
+			turn lthigh to z-axis <-12> speed <30>;
+		}
+		if(bMoving) {
+		//	wait-for-turn rthigh around x-axis;
+		//	wait-for-turn rfoot around x-axis;
+			turn rthigh to x-axis <10> speed <80>;
+			turn rleg to x-axis <20> speed <160>;
+			turn rcalf to x-axis <-10> speed <80>;
+			
+			
+			
+			turn lthigh to x-axis <-80> speed <240>;
+			turn lleg to x-axis <15> speed <100>;
+			turn lfoot to x-axis <35> speed <200>;
+		}
+		
+		
+		
+		
+		/* backup
+		
+		
+		if(bMoving) {
+			turn pelvis to x-axis <10> speed <70>;
+		}
+
+		if(bMoving) {
+			turn rthigh to x-axis <20> speed <100>;
+			turn rleg to x-axis <-40> speed <200>;
+			turn rcalf to x-axis <0> speed <300>;
+			turn rfoot to x-axis <0> speed <300>;
+		}
+		if(bMoving) {
+			wait-for-turn rthigh around x-axis;
+			turn rthigh to x-axis <-80> speed <240>;
+			turn rleg to x-axis <15> speed <100>;
+			turn rfoot to x-axis <35> speed <200>;
+			turn pelvis to z-axis <-6> speed <25>;
+			turn rthigh to z-axis <6> speed <20>;
+			turn rthigh to z-axis <12> speed <30>;
+			turn lthigh to y-axis <-6> speed <20>;
+			turn lthigh to z-axis <0> speed <20>;
+		}
+		if(bMoving) {
+			wait-for-turn rthigh around x-axis;
+			turn rthigh to x-axis <-55> speed <140>;
+		}
+		if(bMoving) {
+			wait-for-turn rthigh around x-axis;
+			wait-for-turn rleg around x-axis;
+			turn rthigh to x-axis <-25> speed <80>;
+			turn rleg to x-axis <0> speed <60>;
+			turn rfoot to x-axis <25> speed <60>;
+		}
+		if(bMoving) {
+			wait-for-turn rthigh around x-axis;
+			wait-for-turn rfoot around x-axis;
+			turn rthigh to x-axis <0> speed <80>;
+			turn rfoot to x-axis <0> speed <80>;
+			turn pelvis to z-axis <6> speed <25>;
+			turn rthigh to y-axis <-6> speed <20>;
+			turn rthigh to z-axis <0> speed <20>;
+			turn lthigh to y-axis <-6> speed <20>;
+			turn lthigh to z-axis <-12> speed <30>;
+		}
+		if(bMoving) {
+			wait-for-turn rthigh around x-axis;
+			wait-for-turn rfoot around x-axis;
+			turn rthigh to x-axis <10> speed <80>;
+			turn rleg to x-axis <20> speed <160>;
+			turn rcalf to x-axis <-10> speed <80>;
+		}
+		
+		*/
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		/*
+			turn rthigh to x-axis <0> speed <120>;
+			turn rleg to x-axis <0> speed <120>;
+			turn rcalf to x-axis <0> speed <20>;
+			turn rfoot to x-axis <0> speed <20>;
+			wait-for-turn rthigh around x-axis;
+			*/
+	}
+}
+
+Create() {
+	hide fpt1;
+	hide fpt2;
+	gun_1 = 0;
+	bMoving = 0;
+	start-script SmokeUnit_SWS();
+	start-script Walk();
+}
+
+StartMoving() {
+	bMoving = 1;
+	signal SIG_MOVE;
+	set-signal-mask SIG_MOVE;
+}
+
+StopMoving() {
+	bMoving = 0;
+	signal SIG_MOVE;
+}
+
+Restore() {
+	sleep 3000;
+	turn torso to y-axis 0 speed <50>;
+	turn turret to x-axis 0 speed <50>;
+}
+
+AimWeapon1(heading, pitch) {
+	signal SIG_AIM1;
+	set-signal-mask SIG_AIM1;
+	turn torso to y-axis heading speed <50>;
+	turn turret to x-axis 0-pitch speed <50>;
+	wait-for-turn torso around y-axis;
+	wait-for-turn turret around x-axis;
+	start-script Restore();
+	return 1;
+}
+
+FireWeapon1() {
+	move pelvis to y-axis [-7] speed [35];
+	turn torso to x-axis <-5> speed <100>;
+	turn thigh_recoil to x-axis <20> speed <100>;
+	turn lleg_recoil to x-axis <-20> speed <100>;
+	turn rleg_recoil to x-axis <-20> speed <100>;
+	sleep 500;
+	move pelvis to y-axis [0] speed [3.5];
+	turn torso to x-axis <0> speed <10>;
+	turn thigh_recoil to x-axis <0> speed <10>;
+	turn lleg_recoil to x-axis <0> speed <10>;
+	turn rleg_recoil to x-axis <0> speed <10>;
+}
+
+QueryWeapon1(piecenum) {
+	if(gun_1 == 0) {
+		piecenum = fpt1;
+	}
+	if(gun_1 == 1) {
+		piecenum = fpt2;
+	}
+}
+
+Shot1(springisgay) {
+	++gun_1;
+	if(gun_1 > 1) {
+		gun_1 = 0;
+	}
+	if(gun_1 == 0) {
+		emit-sfx MED_MUZZLE_FLASH_FX_RED from fpt1;
+	}
+	if(gun_1 == 1) {
+		emit-sfx MED_MUZZLE_FLASH_FX_RED from fpt2;
+	}
+}
+
+AimFromWeapon1(piecenum) {
+	piecenum = torso;
+}
+
+Killed(severity, corpsetype) {
+	return 0;
+}

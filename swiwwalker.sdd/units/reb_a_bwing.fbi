@@ -1,0 +1,61 @@
+[unitinfo]
+{
+	unitname=reb_a_bwing;
+	objectname=rebel/a-bwing.s3o;
+	buildpic=reb_a_bwing.png;
+	icontype=aircraft_hv;
+	soundcategory=reb-a-bwing;
+	category=VTOL;
+
+	name=B-Wing;
+	description=Ground Superiority Fighter;
+	maxdamage=450;
+	idleautoheal=0;
+	buildcostmetal=458;
+	buildcostenergy=13450;
+	buildtime=72;
+	footprintx=3;
+	footprintz=3;
+	mass=100;
+
+	shownanoframe=0;
+	collisionspherescale=1.0;
+
+	energymake=0.2;
+	energyuse=0.1;
+
+	sightdistance=400;
+
+	canmove=1;
+	maxvelocity=10;
+	acceleration=1;
+	brakerate=0.3;
+	turnrate=300;
+
+	canfly=1;
+	cruisealt=250;
+
+	selfdestructcountdown=1;
+	explodeas=MEDIUM_UNIT;
+	selfdestructas=MEDIUM_UNIT;
+
+	nochasecategory=VTOL;
+
+	weapon1=reb_a_bwingion;
+	onlytargetcategory1=IONTARGETABLE;
+	weaponmaindir1=0 0 1;
+	maxangledif1=60;
+	weapon2=reb_a_bwing;
+	onlytargetcategory2=GROUND VTOL;
+	weaponmaindir2=0 0 1;
+	maxangledif2=60;
+	weapon3=reb_torpedo;
+	onlytargetcategory3=GROUND;
+	[sfxtypes]
+	{
+		explosiongenerator0=custom:SMOKEPUFF_SWS_FX;
+		explosiongenerator1=custom:MED_MUZZLE_FLASH_FX_RED;
+		explosiongenerator2=custom:LARGE_MUZZLE_FLASH_FX_BLUE;
+		explosiongenerator3=custom:exhaust_awing;
+	}
+}

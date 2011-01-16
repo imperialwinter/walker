@@ -1,0 +1,44 @@
+[unitinfo]
+{
+	unitname=imp_p_fusionadv;
+	objectname=empire/p-fusionadv.s3o;
+	buildpic=imp-p-fusionadv.png;
+	corpse=imp_p_fusionadv_dead;
+	icontype=resource_hv;
+	soundcategory=CORE_FUS;
+	category=GROUND RESOURCE BUILDING;
+	tedclass=ENERGY;
+	yardmap=o;
+
+	name=Advanced Fusion Generator;
+	description=Produces Energy;
+	maxdamage=1132;
+	idleautoheal=0;
+	buildcostmetal=3345;
+	buildcostenergy=19327;
+	buildtime=68456;
+	footprintx=20;
+	footprintz=8;
+
+	shownanoframe=0;
+	levelground=0;
+
+	energystorage=30;
+	energyuse=-800;
+
+	sightdistance=400;
+
+	onoffable=1;
+	activatewhenbuilt=1;
+
+	maxslope=10;
+
+	selfdestructcountdown=1;
+	explodeas=LARGE_BUILDING;
+	selfdestructas=LARGE_BUILDING;
+
+	[sfxtypes]
+	{
+		explosiongenerator0=custom:SMOKEPUFF_SWS_FX;
+	}
+}

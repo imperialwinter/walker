@@ -1,0 +1,66 @@
+#define TAK
+
+#include "general/standard_commands.h"
+
+#include "imp_commander/pieces.h"
+
+#define SMOKEPIECE1 base
+#define SMOKEPIECE2 dishriser
+#define SMOKEPIECE3 l2aa1base
+#define SMOKEPIECE4 l2aa2base
+#include "general/smokeunit_sws.h"
+
+#include "imp_commander/turbolasers.h"
+#include "imp_commander/l2aa.h"
+#include "imp_commander/build.h"
+
+Create()
+{
+	//flares are ALWAYS hidden
+	#include "imp_commander/create_flares.h"
+	
+	//next, hide the inactive upgrades for this variant
+	hide banners;
+	hide dishriser; hide dishturret; hide dish;
+	hide l1aa1base; hide l1aa1turret; hide l1aa1b1; hide l1aa1b2; hide l1aa1b3; hide l1aa1b4;
+	hide l1aa2base; hide l1aa2turret; hide l1aa2b1; hide l1aa2b2; hide l1aa2b3; hide l1aa2b4;
+
+	turn l2aa1base to y-axis <-90> now;
+	turn l2aa2base to y-axis <90> now;
+
+	move dishriser to y-axis [214] now;
+
+	move l2aa1base to y-axis [213.5] now;
+	move l2aa2base to y-axis [213.5] now;
+	move wall to y-axis [200] now;
+
+	aa_1 = -1;
+	aa_2 = -1;
+
+	start-script SmokeUnit_SWS();
+	start-script BuildScript();
+}
+
+AimWeapon7(h,p) {
+	return 1;
+}
+
+Killed(severity, corpsetype) {
+	if(severity <= 25) {
+		corpsetype = 1;
+		explode base type BITMAP;
+		return 0;
+	}
+	if(severity <= 50) {
+		corpsetype = 2;
+		explode base type BITMAP;
+		return 0;
+	}
+	if(severity <= 99) {
+		corpsetype = 3;
+		explode base type BITMAP;
+		return 0;
+	}
+	corpsetype = 3;
+	explode base type BITMAP;
+}

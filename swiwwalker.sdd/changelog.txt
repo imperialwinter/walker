@@ -1,0 +1,15 @@
+1/16/2011
+-Added to svn
+
+------------
+
+Walker pack v002
+-Fixed fbi categories for new units
+
+-Turbolaser/artillery no longer have mstorage
+
+-Added:
+-- imp_d_antiairadv (scripted, buildpic'd)
+-- imp_b_airplantadv (currently uses same model as imp_b_airplant)
+-- imp_a_scimitar (proper texture applied, buildpic'd)
+-- reb_d_antiairadv (scripted, buildpic'd)

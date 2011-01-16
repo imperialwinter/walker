@@ -1,0 +1,103 @@
+#define TAK
+
+#include "general/standard_commands.h"
+
+piece  root, scaffolds, dustrot, dust1, base, ball, s1, b1, f1, s2, b2, f2;
+
+static-var gun_1;
+
+#define SMOKEPIECE1 ball
+#define SMOKEPIECE2 s1
+#define SMOKEPIECE3 ball
+#define SMOKEPIECE4 ball
+#include "general/smokeunit_sws.h"
+
+#define SMALL_MUZZLE_FLASH_FX_BLUE 1024+2
+
+#define SCAFFOLD_PIECE scaffolds
+#define SCAFFOLD_BELOW_GROUND_DIST [-150]
+#define BUILDING_ROOT base
+#define BUILDING_BELOW_GROUND_DIST [-75]
+#define BUILDING_RISE_SPEED [5.2]
+#define DUSTFX 1024+1
+#define DUST_ROOT dustrot
+#define DUSTFXPT1 dust1
+
+#include "general/scaffolds.h"
+
+Create() {
+	hide f1;
+	hide f2;
+	turn ball to x-axis <-45> now;
+	start-script SmokeUnit_SWS();
+	call-script ConstructionAnim();
+	move BUILDING_ROOT to y-axis [0] now;
+}
+
+Restore() {
+	sleep 5000;
+	turn ball to x-axis <-45> speed <300>;
+}
+
+AimWeapon1(heading, pitch) {
+	signal SIG_AIM1;
+	set-signal-mask SIG_AIM1;
+	turn ball to y-axis heading speed <700>;
+	turn ball to x-axis <0> - pitch speed <550>;
+	wait-for-turn ball around y-axis;
+	wait-for-turn ball around x-axis;
+	start-script Restore();
+	return 1;
+}
+
+FireWeapon1() {
+	if(gun_1) {
+		emit-sfx SMALL_MUZZLE_FLASH_FX_BLUE from f1;
+		move b1 to z-axis [-7.5] now;
+		sleep 150;
+		move b1 to z-axis [0] speed [37.5];
+	}
+	if(!gun_1) {
+		emit-sfx SMALL_MUZZLE_FLASH_FX_BLUE from f2;
+		move b2 to z-axis [-7.5] now;
+		sleep 150;
+		move b2 to z-axis [0] speed [37.5];
+	}
+	gun_1 = !gun_1;
+}
+
+QueryPrimary(piecenum) {
+	if(gun_1) {
+		piecenum = f1; }
+	if(!gun_1) {
+		piecenum = f2; }
+	
+}
+
+AimFromWeapon1(piecenum) {
+	piecenum = s1;
+}
+
+Killed(severity, corpsetype) {
+	if(severity <= 25) {
+		corpsetype = 1;
+		explode ball type BITMAP;
+		explode base type BITMAP;
+		return 0;
+	}
+	if(severity <= 50) {
+		corpsetype = 1;
+		explode ball type BITMAP;
+		explode base type BITMAP;
+		return 0;
+	}
+	if(severity <= 99) {
+		corpsetype = 2;
+		explode ball type BITMAP;
+		explode base type BITMAP;
+		return 0;
+	}
+	corpsetype = 2;
+	explode ball type BITMAP;
+	explode base type BITMAP;
+}

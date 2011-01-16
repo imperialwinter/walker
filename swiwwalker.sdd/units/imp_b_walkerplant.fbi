@@ -1,0 +1,60 @@
+[unitinfo]
+{
+	unitname=imp_b_walkerplant;
+	objectname=empire/b-walkerplant.s3o;
+	buildpic=imp_b_walkerplant.png;
+	corpse=imp_b_droidplant_dead;
+	icontype=factory_light;
+	soundcategory=KBOTPLANT;
+	category=GROUND FACTORY BUILDING;
+	tedclass=PLANT;
+	yardmap=cccooooooooccc cccooooooooccc cccooooooooccc coocoooooocooc oooooccccooooo oooooccccooooo oooooccccooooo oooooccccooooo oooooccccooooo oooooccccooooo oooooccccooooo oooooccccooooo cooooccccooooc cooooccccooooc;
+
+	name=Walker Plant;
+	description=Produces walkers;
+	side=Empire;
+	maxdamage=2800;
+	idleautoheal=0;
+	buildcostmetal=700;
+	buildcostenergy=2000;
+	buildtime=38;
+	footprintx=14;
+	footprintz=14;
+	cobid=11;
+	//collisionVolumeType=ellipsoid;
+	//collisionVolumeScales=240 256 208;
+	//collisionVolumeOffsets=0 0 0;
+
+	reclaimable=0;
+	shownanoframe=0;
+	levelground=0;
+
+	energymake=25;
+
+	sightdistance=400;
+
+	builder=1;
+	workertime=1;
+
+	activatewhenbuilt=1;
+
+	canmove=1;
+	maxslope=20;
+	maxwaterdepth=5;
+
+	UseBuildingGroundDecal=1;
+	BuildingGroundDecalType=decals/imp-b-walkerplant.dds;
+	BuildingGroundDecalDecaySpeed=1;
+	BuildingGroundDecalSizeX=20;
+	BuildingGroundDecalSizeY=20;
+
+	selfdestructcountdown=1;
+	explodeas=LARGE_BUILDING;
+	selfdestructas=LARGE_BUILDING;
+
+	[sfxtypes]
+	{
+		explosiongenerator0=custom:SMOKEPUFF_SWS_FX;
+		explosiongenerator1=custom:imp_b_wpshield;
+	}
+}

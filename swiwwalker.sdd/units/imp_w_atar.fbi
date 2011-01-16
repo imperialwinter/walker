@@ -1,0 +1,49 @@
+[unitinfo]
+{
+	unitname=imp_w_atar;
+	objectname=empire/w-atar.s3o;
+	buildpic=imp_w_atar.png;
+	corpse=imp_w_atar_dead;
+	icontype=vehicle_hv;
+	soundcategory=imp-w-atar;
+	category=IONTARGETABLE GROUND WALKER;
+	tedclass=WALKER;
+
+	name=AT-AR;
+	description=All Terrain Advance Raider;
+	maxdamage=480;
+	idleautoheal=0;
+	buildcostmetal=315;
+	buildcostenergy=3333;
+	buildtime=4367;
+	footprintx=2;
+	footprintz=2;
+	mass=300;
+
+	upright=1;
+	shownanoframe=0;
+
+	sightdistance=400;
+	radardistance=750;
+	seismicsignature=1;
+
+	canmove=1;
+	movementclass=Walker3x3;
+	maxvelocity=2.8;
+	acceleration=0.15;
+	brakerate=0.18;
+	turnrate=444;
+	maxslope=17;
+	maxwaterdepth=12;
+
+	selfdestructcountdown=1;
+	explodeas=SMALL_UNIT;
+	selfdestructas=SMALL_UNIT;
+
+	weapon1=imp_v_cav;
+	onlytargetcategory1=GROUND;
+	[sfxtypes]
+	{
+		explosiongenerator0=custom:SMOKEPUFF_SWS_FX;
+	}
+}

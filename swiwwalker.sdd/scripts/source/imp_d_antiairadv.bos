@@ -1,0 +1,109 @@
+#define TAK
+
+#include "general/standard_commands.h"
+
+piece plat, base, turret, b1, f1, b2, f2, b3, f3, b4, f4;
+
+static-var aa_1;
+
+#define SMOKEPIECE1 base
+#define SMOKEPIECE2 turret
+#define SMOKEPIECE3 b1
+#define SMOKEPIECE4 b4
+#include "general/smokeunit_sws.h"
+
+#define MED_MUZZLE_FLASH_FX_GREEN 1024+1
+
+Create()
+{
+	//flares are ALWAYS hidden
+	hide f1;
+	hide f2;
+	hide f3;
+	hide f4;
+
+	aa_1 = -1;
+
+	start-script SmokeUnit_SWS();
+}
+
+RestoreAA() {
+	sleep 5000;
+	turn turret to x-axis <-30> speed <50>;
+}
+
+//first turret
+AimFromWeapon1(piecenum) {
+	piecenum = base;
+}
+
+QueryWeapon1(piecenum) {
+	if(aa_1 == 0) {
+		piecenum = f1; }
+	if(aa_1 == 1) {
+		piecenum = f3; }
+	if(aa_1 == 2) {
+		piecenum = f2; }
+	if(aa_1 == 3) {
+		piecenum = f3; }
+}
+
+Shot1(springsucks) {
+	++aa_1;
+	if(aa_1 > 3) {
+		aa_1 = 0;
+	}
+	if(aa_1 == 0) {
+		emit-sfx MED_MUZZLE_FLASH_FX_GREEN from f1;
+		emit-sfx MED_MUZZLE_FLASH_FX_GREEN from f3;
+		move b1 to z-axis [-7.5] now;
+		move b3 to z-axis [-7.5] now;
+		sleep 150;
+		move b1 to z-axis [0] speed [37.5];
+		move b3 to z-axis [0] speed [37.5];
+	}
+	if(aa_1 == 2) {
+		emit-sfx MED_MUZZLE_FLASH_FX_GREEN from f2;
+		emit-sfx MED_MUZZLE_FLASH_FX_GREEN from f4;
+		move b2 to z-axis [-7.5] now;
+		move b4 to z-axis [-7.5] now;
+		sleep 150;
+		move b2 to z-axis [0] speed [37.5];
+		move b4 to z-axis [0] speed [37.5];
+	}
+}
+
+FireWeapon1() {
+	return 0;
+}
+
+AimWeapon1(heading, pitch) {
+	signal SIG_AIM5;
+	set-signal-mask SIG_AIM5;
+	turn base to y-axis heading speed <500>;
+	turn turret to x-axis <0> - pitch speed <250>;
+	wait-for-turn base around y-axis;
+	wait-for-turn turret around x-axis;
+	start-script RestoreAA();
+	return 1;
+}
+
+Killed(severity, corpsetype) {
+	if(severity <= 25) {
+		corpsetype = 1;
+		explode base type BITMAP;
+		return 0;
+	}
+	if(severity <= 50) {
+		corpsetype = 2;
+		explode base type BITMAP;
+		return 0;
+	}
+	if(severity <= 99) {
+		corpsetype = 3;
+		explode base type BITMAP;
+		return 0;
+	}
+	corpsetype = 3;
+	explode base type BITMAP;
+}

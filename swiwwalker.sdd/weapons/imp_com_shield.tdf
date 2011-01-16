@@ -1,0 +1,34 @@
+[imp_com_shield]
+{
+	name=Shield;
+
+	isshield=1;
+	shieldrepulser=1;
+	smartshield=1;
+	exteriorshield=1;
+	visibleshield=1;
+	visibleshieldrepulse=1;
+	shieldforce=500;
+	shieldradius=300;
+	shieldmaxspeed=500;
+	shieldenergyuse=10;
+	shieldpower=420;
+	shieldstartingpower=420;
+	shieldpowerregen=60;
+	shieldpowerregenenergy=10;
+	shieldintercepttype=2;
+	shieldbadcolor=0.6 0.05 0.75;
+	shieldgoodcolor=0.0 0.05 0.75;
+	shieldalpha=0.5;
+
+	[damage]
+	{
+		default=0;
+		no_armor=0;
+		light_armor=0;
+		medium_armor=0;
+		heavy_armor=0;
+		ion_damage=0;
+		flag=0.000001;
+	}
+}

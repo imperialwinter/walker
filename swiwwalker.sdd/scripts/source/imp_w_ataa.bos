@@ -1,0 +1,72 @@
+#define TAK
+
+#include "general/standard_commands.h"
+
+piece  base,
+		leg1, ankle1, toe11, toe12, toe13,
+		leg2, ankle2, toe21, toe22, toe23,
+		leg3, ankle3, toe31, toe32, toe33,
+		leg4, ankle4, toe41, toe42, toe43,
+		turret, launcher, aimpoint, flare1, flare2;
+
+#define SMOKEPIECE1 base
+#define SMOKEPIECE2 base
+#define SMOKEPIECE3 base
+#define SMOKEPIECE4 base
+#include "general/smokeunit_sws.h"
+
+static-var  bMoving, gun_1;
+
+#define SIG_MOVE			2
+#define SIG_AIM				4
+
+#include "ataawalk.h"
+
+Create() {
+	bMoving = FALSE;
+	gun_1 = 0;
+	start-script SmokeUnit_SWS();
+}
+
+RestoreAfterDelay() {
+	sleep 5000;
+	turn launcher to y-axis <0> speed <100>;
+	turn launcher to x-axis <0> speed <100>;
+	wait-for-turn launcher around y-axis;
+	move turret to y-axis [0] speed [250];
+}
+
+AimWeapon1(heading, pitch) {
+	signal SIG_AIM;
+	set-signal-mask SIG_AIM;
+	move turret to y-axis [11.25] speed [250];
+	wait-for-move turret along y-axis;
+	turn launcher to y-axis heading speed <300>;
+	turn launcher to x-axis 0 - pitch speed <300>;
+	wait-for-turn launcher around y-axis;
+	start-script RestoreAfterDelay();
+	return 1;
+}
+
+AimFromWeapon1(piecenum) {
+	piecenum = aimpoint;
+}
+
+FireWeapon1() {
+	gun_1 = !gun_1;
+	return 0;
+}
+
+QueryWeapon1(piecenum) {
+	if(!gun_1) {
+		piecenum = flare1;
+	}
+	if(gun_1) {
+		piecenum = flare1;
+	}
+}
+
+Killed(severity, corpsetype) {
+	hide flare1;
+	hide flare2;
+}

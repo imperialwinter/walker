@@ -1,0 +1,55 @@
+[unitinfo]
+{
+	unitname=imp_a_scimitar;
+	objectname=empire/a-scimitar.s3o;
+	buildpic=imp_a_scimitar.png;
+	icontype=aircraft_sp;
+	soundcategory=imp-a-scimitar;
+	category=VTOL;
+
+	name=Scimitar Bomber;
+	description=Advanced Bomber;
+	maxdamage=510;
+	idleautoheal=0;
+	buildcostmetal=620;
+	buildcostenergy=13252;
+	buildtime=100;
+	footprintx=2;
+	footprintz=2;
+	mass=100;
+
+	shownanoframe=0;
+	collisionspherescale=1.0;
+
+	energymake=10;
+	energyuse=10;
+
+	sightdistance=400;
+
+	canmove=1;
+	maxvelocity=6;
+	acceleration=1;
+	brakerate=0.3;
+	turnrate=240;
+
+	canfly=1;
+	cruisealt=250;
+
+	selfdestructcountdown=1;
+	explodeas=LARGE_UNIT;
+	selfdestructas=LARGE_UNIT;
+
+	nochasecategory=VTOL;
+
+	weapon1=imp_a_scimitar;
+	onlytargetcategory1=GROUND;
+	weapon2=imp_a_tiefighter;
+	onlytargetcategory2=GROUND VTOL;
+	weaponmaindir2=0 0 1;
+	maxangledif2=60;
+	[sfxtypes]
+	{
+		explosiongenerator0=custom:SMOKEPUFF_SWS_FX;
+		explosiongenerator1=custom:MED_MUZZLE_FLASH_FX_GREEN;
+	}
+}

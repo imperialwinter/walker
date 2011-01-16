@@ -1,0 +1,55 @@
+[unitinfo]
+{
+	unitname=reb_a_xwing;
+	objectname=rebel/a-xwing.s3o;
+	buildpic=reb_a_xwing.png;
+	icontype=aircraft_aa;
+	soundcategory=reb-a-xwing;
+	category=VTOL;
+
+	name=X-Wing;
+	description=Air Superiority Fighter;
+	maxdamage=320;
+	idleautoheal=0;
+	buildcostmetal=396;
+	buildcostenergy=10370;
+	buildtime=60;
+	footprintx=2;
+	footprintz=3;
+	mass=100;
+
+	shownanoframe=0;
+	collisionspherescale=1.0;
+
+	energymake=0.2;
+	energyuse=0.1;
+
+	sightdistance=400;
+
+	canmove=1;
+	maxvelocity=11;
+	acceleration=1.5;
+	brakerate=0.5;
+	turnrate=400;
+
+	canfly=1;
+	cruisealt=250;
+
+	selfdestructcountdown=1;
+	explodeas=TIE_BLAST;
+	selfdestructas=TIE_BLAST;
+
+	weapon1=reb_a_xwing;
+	badtargetcategory1=GROUND;
+	onlytargetcategory1=GROUND VTOL;
+	weaponmaindir1=0 0 1;
+	maxangledif1=60;
+	weapon2=reb_torpedo;
+	onlytargetcategory2=GROUND;
+	[sfxtypes]
+	{
+		explosiongenerator0=custom:SMOKEPUFF_SWS_FX;
+		explosiongenerator1=custom:MED_MUZZLE_FLASH_FX_RED;
+		explosiongenerator2=custom:exhaust_z95;
+	}
+}
