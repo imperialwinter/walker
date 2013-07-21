@@ -2,9 +2,9 @@
 {
 	name=Shield Generator;
 
-	texture1=shield;
+	//texture1=shield;
 
-	isshield=1;
+	weapontype=Shield;
 	shieldrepulser=1;
 	smartshield=1;
 	exteriorshield=1;

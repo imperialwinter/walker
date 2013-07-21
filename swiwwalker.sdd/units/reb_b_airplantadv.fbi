@@ -1,14 +1,15 @@
 [unitinfo]
 {
 	unitname=reb_b_airplantadv;
-	objectname=rebel/b-airplantadv.s3o;
+	objectname=rebel/b-airplant.s3o;
+	script=reb_b_airplant.cob;
 	buildpic=reb_b_airplantadv.png;
 	corpse=reb_b_airplant_dead;
 	icontype=factory_medium;
 	soundcategory=AIRPLANT;
 	category=GROUND FACTORY BUILDING;
 	tedclass=PLANT;
-	yardmap=ooooooooo occccoooo occccoooo occccoooo occcccooo occcccooo occccccco ooooooooy;
+	yardmap=oooooooooooo occcccccoooo occcccccoooo occcccccoooo occcccccoooo occcccccoooo occcccccoooo occcccccoooo occcccccoooo occcccccoooo occcccccoooo oooooooooooo;
 
 	name=Adv Air Base;
 	description=Produces Starfighters;

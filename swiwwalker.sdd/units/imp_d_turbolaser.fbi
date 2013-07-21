@@ -7,7 +7,7 @@
 	icontype=defense_heavy;
 	soundcategory=GUARD;
 	category=GROUND DEFENSE BUILDING;
-	yardmap=oooooo;
+	yardmap=ooooooooo;
 
 	name=Turbolaser Battery;
 	description=High-Power Laser Battery;

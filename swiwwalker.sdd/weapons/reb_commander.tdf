@@ -65,7 +65,7 @@
 {
 	name=Shields;
 
-	isshield=1;
+	weapontype=Shield;
 	shieldrepulser=1;
 	smartshield=1;
 	exteriorshield=1;

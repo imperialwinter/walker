@@ -28,7 +28,7 @@
 	sightdistance=400;
 
 	canmove=1;
-	movementclass=TANKHOVER2;
+	movementclass=HOVER3x3;
 	maxvelocity=1.65;
 	acceleration=0.039;
 	brakerate=0.055;

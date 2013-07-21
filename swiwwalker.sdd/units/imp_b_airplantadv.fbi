@@ -8,7 +8,7 @@
 	soundcategory=AIRPLANT;
 	category=GROUND FACTORY BUILDING;
 	tedclass=PLANT;
-	yardmap=oooooooooooooo oooooooooooooo ooccccccccccoo ooccccccccccoo ooccccccccccoo ooccccccccccoo ooccccccccccoo ooccccccccccoo ooccccccccccoo ooccccccccccoo oooooooooooooo oooooooooooooo;
+	yardmap=oooooooooooooo oooooooooooooo ooccccccccccoo ooccccccccccoo ooccccccccccoo ooccccccccccoo ooccccccccccoo ooccccccccccoo ooccccccccccoo ooccccccccccoo ooccccccccccoo ooccccccccccoo oooooooooooooo oooooooooooooo;
 
 	name=Advanced Air Base;
 	description=Produces Starfighters;

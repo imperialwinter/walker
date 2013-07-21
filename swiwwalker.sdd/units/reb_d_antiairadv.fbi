@@ -7,7 +7,7 @@
 	icontype=defense_aa;
 	soundcategory=ARM_KBOT;
 	category=GROUND DEFENSE BUILDING;
-	yardmap=oo oo;
+	yardmap=oooooo oooooo oooooo oooooo oooooo oooooo;
 
 	name=Heavy Anti-Air Battery;
 	description=Anti-Aircraft Defense;

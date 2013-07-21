@@ -7,7 +7,7 @@
 	icontype=defense_heavy;
 	soundcategory=GUARD;
 	category=GROUND DEFENSE BUILDING;
-	yardmap=oooooo;
+	yardmap=ooooo ooooo ooooo ooooo ooooo ooooo;
 
 	name=Artillery Platform;
 	description=Artillery Platform;

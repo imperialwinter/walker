@@ -1,4 +1,4 @@
-local function cobangle(x) return x * 182 * 3.14159 / 32768 end
+local function cobangle(x) return (x or 0) * 182 * 3.14159 / 32768 end
 
 local uid = unitID
 local udid = Spring.GetUnitDefID(uid)
