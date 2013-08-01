@@ -1,0 +1,112 @@
+This is a copy of the todo list we had in our private forum:
+
+----BEGIN
+This topic doesn't include lua, since we already have a topic for that.
+
+This thread was last updated: 6/2/09
+
+Models
+'Pack5' units
+Empire
+- groundscar for impaap
+
+Rebels
+-Artillery turret [missile?]
+-MPTL
+
+'Pack6' units (list is tentative)
+Empire
+-Sith factory
+-Sith apprentice
+-Sith master
+-AT-AT gantry
+-AT-AT
+-Orbital bombardment uplink
+-Air repair pad
+
+Rebels
+-Jedi temple
+-Padawan
+-Knight
+-Master
+-Command center (this was the one we planned on giving fake nukes right?)
+-Ion cannon
+-Shield generator
+-In-flight air-repair plane, if spring permits it by then. Otherwise a pad of some sort
+
+Graphics (not counting models)
+-Reorganize /bitmaps/ directory. Delete unused textures, sort GPL textures elsewhere (if possible), and replace all GPL material in /bitmaps/ with custom content or otherwise licensed content (CC, PD, etc)
+
+- add little blinking lights etc
+
+-Create new CEGs particularly for unit deaths and various other explosions
+
+uvwrapped and not skinned:
+-Imp L2 sensor
+
+Touchups or retextures:
+-B-wing
+-T4/c
+
+Custom ground decals:
+-Imperial barracks
+
+Reflection maps and/or reflection map revisions:
+-E-wing
+-TIE defender (I think)
+-Turbolaser
+-T4/c
+-ATPT
+
+BOS scripts
+-Investigate adding footstep sounds in conjunction with PLAY_SOUND and the global cob variables so the sounds don't stack too much
+
+-Write new Killed() scripts for most non-infantry units
+
+-Add sparks and other effects to the various factories, except the barracks for both sides
+
+-Apply death animations to the rest of the rebel troops and the oddball imp troops (eweb, royal guard, rkt)
+
+-Vehicle compatibility with the transports so things doesn't clip all too much
+
+Audio
+-Get some music made for us or find some fitting (and free) music to package in
+
+-Remove clicks from any sounds we currently have in the game which we cannot yet replace
+
+-Replace all sound effects and voice acks with new ones not stolen from OTA and/or force commander
+
+-Edit the voice acks we currently have (cut them up into individual files, add radio noise etc)
+-----END
+
+
+Gnomre's comments on these, 20130801:
+-"Groundscar" is Zsinj's term for the ground decal (for the adv air plant)
+-AFAIK we never finalized a design for the MPTL. I think Jamin had a few designs but I don't know if we ever
+agreed on one or if I received any of them
+-Jedi/Sith should be shelved entirely. No work was done there
+-AT-AT was just going to be delivered on the spot in a Theta dropship, no special gantry. It would probably
+come with the later Commander upgrades (maybe the command post too?) and it should just allow you to "build" one
+wherever you have LOS. You guys can work out the details
+-I can't find the AT-AT skin yet but I'm pretty sure I have it. If not, I'll get a hold of Lynx.
+-Bombardment uplink is uploaded to svn now. In OTA we just used Star Destroyer turbolasers fired from orbit in a
+relatively large area. You can be creative with that if you want. Hell, you could make AT-ATs one of the upgrade
+paths, and bombardment the other, then re-use this building for something else if you think of something.
+-I think the air repair pad is already in the svn. If not bug me. It was going to be a first-tier flag upgrade iirc.
+
+-Rebel command center: in TA, there are EMP and Neutron bomb weapons, which mass-stun and only kill Arm units
+respectively. We were considering a consolidated building with several "nuke" options along these lines. We didn't
+hammer out the specifics but they included things like a "Rogue Squadron assault" which would be a heavy bombing
+run and/or specialized anti-resource-building weapons. Just think of Rebel guerilla warfare type things and not a
+boring orbital bombardment for the Rebels.
+-Ion cannon could be merged in as a command center bombardment though. We never made that unit and it was a pain in the
+ass in OTA. It was basically a weird EMP Big Bertha.
+-Shield generator might have been created and skinned. I'm not sure.
+-In flight air-repair: our Rebel credos was mobility. Mobile commander, etc. We wanted the rebel air repair pad to be
+the same. We had a working version of this in OTA but years ago the planes would just try to dock with themselves
+in Spring and that didn't work too well. Either way a model and skin would need to be made.
+
+-bitmaps dir is whatever at this point
+-Zsinj always wanted more details like blinking lights and sound effects. I should have never made the droid lab.
+-Ignore the Imp L2 sensor. Its role was merged into comm upgrades, and its model was made into the orbital uplink.
+-I don't know if those reflection maps were ever made. I'll investigate.
